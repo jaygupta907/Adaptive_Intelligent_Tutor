@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 800px;
+                 background-color: #222222;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "font": {"color": "white"}, "id": 27500, "label": "27500", "shape": "dot", "size": 32, "title": "Skill 27500 (deg=4)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 27504, "label": "27504", "shape": "dot", "size": 32, "title": "Skill 27504 (deg=4)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 27501, "label": "27501", "shape": "dot", "size": 38, "title": "Skill 27501 (deg=6)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 27510, "label": "27510", "shape": "dot", "size": 32, "title": "Skill 27510 (deg=4)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 27476, "label": "27476", "shape": "dot", "size": 35, "title": "Skill 27476 (deg=5)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 27512, "label": "27512", "shape": "dot", "size": 32, "title": "Skill 27512 (deg=4)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26799, "label": "26799", "shape": "dot", "size": 38, "title": "Skill 26799 (deg=6)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26802, "label": "26802", "shape": "dot", "size": 41, "title": "Skill 26802 (deg=7)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26800, "label": "26800", "shape": "dot", "size": 38, "title": "Skill 26800 (deg=6)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26804, "label": "26804", "shape": "dot", "size": 38, "title": "Skill 26804 (deg=6)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26798, "label": "26798", "shape": "dot", "size": 44, "title": "Skill 26798 (deg=8)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26805, "label": "26805", "shape": "dot", "size": 38, "title": "Skill 26805 (deg=6)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26806, "label": "26806", "shape": "dot", "size": 38, "title": "Skill 26806 (deg=6)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26696, "label": "26696", "shape": "dot", "size": 35, "title": "Skill 26696 (deg=5)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 27485, "label": "27485", "shape": "dot", "size": 23, "title": "Skill 27485 (deg=1)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 28665, "label": "28665", "shape": "dot", "size": 32, "title": "Skill 28665 (deg=4)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 28666, "label": "28666", "shape": "dot", "size": 29, "title": "Skill 28666 (deg=3)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 28671, "label": "28671", "shape": "dot", "size": 26, "title": "Skill 28671 (deg=2)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 28668, "label": "28668", "shape": "dot", "size": 26, "title": "Skill 28668 (deg=2)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 28491, "label": "28491", "shape": "dot", "size": 41, "title": "Skill 28491 (deg=7)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 27641, "label": "27641", "shape": "dot", "size": 32, "title": "Skill 27641 (deg=4)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 27642, "label": "27642", "shape": "dot", "size": 32, "title": "Skill 27642 (deg=4)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 27644, "label": "27644", "shape": "dot", "size": 29, "title": "Skill 27644 (deg=3)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 27661, "label": "27661", "shape": "dot", "size": 29, "title": "Skill 27661 (deg=3)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 27643, "label": "27643", "shape": "dot", "size": 29, "title": "Skill 27643 (deg=3)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26475, "label": "26475", "shape": "dot", "size": 26, "title": "Skill 26475 (deg=2)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 31413, "label": "31413", "shape": "dot", "size": 23, "title": "Skill 31413 (deg=1)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26530, "label": "26530", "shape": "dot", "size": 26, "title": "Skill 26530 (deg=2)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26649, "label": "26649", "shape": "dot", "size": 56, "title": "Skill 26649 (deg=12)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26650, "label": "26650", "shape": "dot", "size": 56, "title": "Skill 26650 (deg=12)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26648, "label": "26648", "shape": "dot", "size": 53, "title": "Skill 26648 (deg=11)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26647, "label": "26647", "shape": "dot", "size": 56, "title": "Skill 26647 (deg=12)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26651, "label": "26651", "shape": "dot", "size": 59, "title": "Skill 26651 (deg=13)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26549, "label": "26549", "shape": "dot", "size": 65, "title": "Skill 26549 (deg=15)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26557, "label": "26557", "shape": "dot", "size": 68, "title": "Skill 26557 (deg=16)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26558, "label": "26558", "shape": "dot", "size": 59, "title": "Skill 26558 (deg=13)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 31437, "label": "31437", "shape": "dot", "size": 41, "title": "Skill 31437 (deg=7)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26545, "label": "26545", "shape": "dot", "size": 56, "title": "Skill 26545 (deg=12)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26548, "label": "26548", "shape": "dot", "size": 65, "title": "Skill 26548 (deg=15)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26555, "label": "26555", "shape": "dot", "size": 65, "title": "Skill 26555 (deg=15)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 31439, "label": "31439", "shape": "dot", "size": 38, "title": "Skill 31439 (deg=6)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 31440, "label": "31440", "shape": "dot", "size": 32, "title": "Skill 31440 (deg=4)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26556, "label": "26556", "shape": "dot", "size": 56, "title": "Skill 26556 (deg=12)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26559, "label": "26559", "shape": "dot", "size": 59, "title": "Skill 26559 (deg=13)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 31441, "label": "31441", "shape": "dot", "size": 41, "title": "Skill 31441 (deg=7)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26546, "label": "26546", "shape": "dot", "size": 62, "title": "Skill 26546 (deg=14)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 27527, "label": "27527", "shape": "dot", "size": 29, "title": "Skill 27527 (deg=3)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 27528, "label": "27528", "shape": "dot", "size": 29, "title": "Skill 27528 (deg=3)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 29889, "label": "29889", "shape": "dot", "size": 29, "title": "Skill 29889 (deg=3)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 27529, "label": "27529", "shape": "dot", "size": 29, "title": "Skill 27529 (deg=3)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 28492, "label": "28492", "shape": "dot", "size": 38, "title": "Skill 28492 (deg=6)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 28493, "label": "28493", "shape": "dot", "size": 32, "title": "Skill 28493 (deg=4)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 28488, "label": "28488", "shape": "dot", "size": 38, "title": "Skill 28488 (deg=6)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 28489, "label": "28489", "shape": "dot", "size": 38, "title": "Skill 28489 (deg=6)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 28487, "label": "28487", "shape": "dot", "size": 35, "title": "Skill 28487 (deg=5)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 28490, "label": "28490", "shape": "dot", "size": 35, "title": "Skill 28490 (deg=5)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26640, "label": "26640", "shape": "dot", "size": 23, "title": "Skill 26640 (deg=1)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 31448, "label": "31448", "shape": "dot", "size": 23, "title": "Skill 31448 (deg=1)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26547, "label": "26547", "shape": "dot", "size": 56, "title": "Skill 26547 (deg=12)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26554, "label": "26554", "shape": "dot", "size": 62, "title": "Skill 26554 (deg=14)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26561, "label": "26561", "shape": "dot", "size": 32, "title": "Skill 26561 (deg=4)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26776, "label": "26776", "shape": "dot", "size": 35, "title": "Skill 26776 (deg=5)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 31425, "label": "31425", "shape": "dot", "size": 32, "title": "Skill 31425 (deg=4)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 31426, "label": "31426", "shape": "dot", "size": 32, "title": "Skill 31426 (deg=4)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 31427, "label": "31427", "shape": "dot", "size": 32, "title": "Skill 31427 (deg=4)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 31428, "label": "31428", "shape": "dot", "size": 32, "title": "Skill 31428 (deg=4)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26560, "label": "26560", "shape": "dot", "size": 41, "title": "Skill 26560 (deg=7)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 31434, "label": "31434", "shape": "dot", "size": 26, "title": "Skill 31434 (deg=2)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26698, "label": "26698", "shape": "dot", "size": 35, "title": "Skill 26698 (deg=5)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26693, "label": "26693", "shape": "dot", "size": 38, "title": "Skill 26693 (deg=6)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26695, "label": "26695", "shape": "dot", "size": 35, "title": "Skill 26695 (deg=5)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26699, "label": "26699", "shape": "dot", "size": 41, "title": "Skill 26699 (deg=7)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26694, "label": "26694", "shape": "dot", "size": 32, "title": "Skill 26694 (deg=4)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26646, "label": "26646", "shape": "dot", "size": 29, "title": "Skill 26646 (deg=3)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 31436, "label": "31436", "shape": "dot", "size": 23, "title": "Skill 31436 (deg=1)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26692, "label": "26692", "shape": "dot", "size": 35, "title": "Skill 26692 (deg=5)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26563, "label": "26563", "shape": "dot", "size": 29, "title": "Skill 26563 (deg=3)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26700, "label": "26700", "shape": "dot", "size": 29, "title": "Skill 26700 (deg=3)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 27711, "label": "27711", "shape": "dot", "size": 32, "title": "Skill 27711 (deg=4)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 27721, "label": "27721", "shape": "dot", "size": 35, "title": "Skill 27721 (deg=5)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 27719, "label": "27719", "shape": "dot", "size": 35, "title": "Skill 27719 (deg=5)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 27774, "label": "27774", "shape": "dot", "size": 32, "title": "Skill 27774 (deg=4)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 27773, "label": "27773", "shape": "dot", "size": 32, "title": "Skill 27773 (deg=4)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 27775, "label": "27775", "shape": "dot", "size": 29, "title": "Skill 27775 (deg=3)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 28800, "label": "28800", "shape": "dot", "size": 23, "title": "Skill 28800 (deg=1)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 28807, "label": "28807", "shape": "dot", "size": 26, "title": "Skill 28807 (deg=2)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 28802, "label": "28802", "shape": "dot", "size": 23, "title": "Skill 28802 (deg=1)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 31444, "label": "31444", "shape": "dot", "size": 26, "title": "Skill 31444 (deg=2)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26562, "label": "26562", "shape": "dot", "size": 26, "title": "Skill 26562 (deg=2)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26442, "label": "26442", "shape": "dot", "size": 23, "title": "Skill 26442 (deg=1)"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": 26455, "label": "26455", "shape": "dot", "size": 23, "title": "Skill 26455 (deg=1)"}]);
+                  edges = new vis.DataSet([{"from": 27500, "to": 27504, "width": 0.6}, {"from": 27500, "to": 27501, "width": 0.6}, {"from": 27500, "to": 27510, "width": 0.6}, {"from": 27500, "to": 27476, "width": 0.6}, {"from": 27504, "to": 27501, "width": 0.6}, {"from": 27504, "to": 27476, "width": 0.6}, {"from": 27504, "to": 27512, "width": 0.6}, {"from": 26799, "to": 26802, "width": 0.6}, {"from": 26799, "to": 26800, "width": 0.6}, {"from": 26799, "to": 26804, "width": 0.6}, {"from": 26799, "to": 26798, "width": 0.6}, {"from": 26799, "to": 26805, "width": 0.6}, {"from": 26799, "to": 26806, "width": 0.6}, {"from": 26802, "to": 26800, "width": 0.6}, {"from": 26802, "to": 26804, "width": 0.6}, {"from": 26802, "to": 26798, "width": 0.6}, {"from": 26802, "to": 26805, "width": 0.6}, {"from": 26802, "to": 26806, "width": 0.6}, {"from": 26802, "to": 26696, "width": 0.6}, {"from": 26805, "to": 26806, "width": 0.6}, {"from": 26805, "to": 26804, "width": 0.6}, {"from": 26805, "to": 26800, "width": 0.6}, {"from": 26805, "to": 26798, "width": 0.6}, {"from": 26806, "to": 26804, "width": 0.6}, {"from": 26806, "to": 26800, "width": 0.6}, {"from": 26806, "to": 26798, "width": 0.6}, {"from": 27501, "to": 27476, "width": 0.6}, {"from": 27501, "to": 27485, "width": 0.6}, {"from": 27501, "to": 27510, "width": 0.6}, {"from": 27501, "to": 27512, "width": 0.6}, {"from": 27510, "to": 27512, "width": 0.6}, {"from": 27510, "to": 27476, "width": 0.6}, {"from": 27512, "to": 27476, "width": 0.6}, {"from": 28665, "to": 28666, "width": 0.6}, {"from": 28665, "to": 28671, "width": 0.6}, {"from": 28665, "to": 28668, "width": 0.6}, {"from": 28665, "to": 28491, "width": 0.6}, {"from": 28666, "to": 28668, "width": 0.6}, {"from": 28666, "to": 28671, "width": 0.6}, {"from": 27641, "to": 27642, "width": 0.6}, {"from": 27641, "to": 27644, "width": 0.6}, {"from": 27641, "to": 27661, "width": 0.6}, {"from": 27641, "to": 27643, "width": 0.6}, {"from": 27642, "to": 27644, "width": 0.6}, {"from": 27642, "to": 27643, "width": 0.6}, {"from": 27642, "to": 27661, "width": 0.6}, {"from": 26475, "to": 31413, "width": 0.6}, {"from": 26475, "to": 26530, "width": 0.6}, {"from": 26649, "to": 26650, "width": 0.6}, {"from": 26649, "to": 26648, "width": 0.6}, {"from": 26649, "to": 26647, "width": 0.6}, {"from": 26649, "to": 26651, "width": 0.6}, {"from": 26649, "to": 26549, "width": 0.6}, {"from": 26649, "to": 26557, "width": 0.6}, {"from": 26649, "to": 26558, "width": 0.6}, {"from": 26649, "to": 31437, "width": 0.6}, {"from": 26649, "to": 26545, "width": 0.6}, {"from": 26649, "to": 26548, "width": 0.6}, {"from": 26649, "to": 26555, "width": 0.6}, {"from": 26649, "to": 31439, "width": 0.6}, {"from": 26650, "to": 26651, "width": 0.6}, {"from": 26650, "to": 26648, "width": 0.6}, {"from": 26650, "to": 31440, "width": 0.6}, {"from": 26650, "to": 26647, "width": 0.6}, {"from": 26650, "to": 26555, "width": 0.6}, {"from": 26650, "to": 26556, "width": 0.6}, {"from": 26650, "to": 31437, "width": 0.6}, {"from": 26650, "to": 26559, "width": 0.6}, {"from": 26650, "to": 31441, "width": 0.6}, {"from": 26650, "to": 26546, "width": 0.6}, {"from": 26650, "to": 26557, "width": 0.6}, {"from": 26800, "to": 26798, "width": 0.6}, {"from": 26800, "to": 26804, "width": 0.6}, {"from": 27527, "to": 27528, "width": 0.6}, {"from": 27527, "to": 29889, "width": 0.6}, {"from": 27527, "to": 27529, "width": 0.6}, {"from": 27528, "to": 27529, "width": 0.6}, {"from": 27528, "to": 29889, "width": 0.6}, {"from": 28492, "to": 28493, "width": 0.6}, {"from": 28492, "to": 28488, "width": 0.6}, {"from": 28492, "to": 28491, "width": 0.6}, {"from": 28492, "to": 28489, "width": 0.6}, {"from": 28492, "to": 28487, "width": 0.6}, {"from": 28492, "to": 28490, "width": 0.6}, {"from": 28493, "to": 28489, "width": 0.6}, {"from": 28493, "to": 28491, "width": 0.6}, {"from": 28493, "to": 28488, "width": 0.6}, {"from": 27643, "to": 27644, "width": 0.6}, {"from": 26640, "to": 31448, "width": 0.6}, {"from": 28488, "to": 28489, "width": 0.6}, {"from": 28488, "to": 28491, "width": 0.6}, {"from": 28488, "to": 28487, "width": 0.6}, {"from": 28488, "to": 28490, "width": 0.6}, {"from": 28489, "to": 28490, "width": 0.6}, {"from": 28489, "to": 28487, "width": 0.6}, {"from": 28489, "to": 28491, "width": 0.6}, {"from": 26651, "to": 26648, "width": 0.6}, {"from": 26651, "to": 26647, "width": 0.6}, {"from": 26651, "to": 26546, "width": 0.6}, {"from": 26651, "to": 26555, "width": 0.6}, {"from": 26651, "to": 26549, "width": 0.6}, {"from": 26651, "to": 26547, "width": 0.6}, {"from": 26651, "to": 26554, "width": 0.6}, {"from": 26651, "to": 26557, "width": 0.6}, {"from": 26651, "to": 26548, "width": 0.6}, {"from": 26651, "to": 26559, "width": 0.6}, {"from": 26651, "to": 26561, "width": 0.6}, {"from": 27529, "to": 29889, "width": 0.6}, {"from": 26776, "to": 31425, "width": 0.6}, {"from": 26776, "to": 26798, "width": 0.6}, {"from": 26776, "to": 31426, "width": 0.6}, {"from": 26776, "to": 31427, "width": 0.6}, {"from": 26776, "to": 31428, "width": 0.6}, {"from": 31425, "to": 31426, "width": 0.6}, {"from": 31425, "to": 31427, "width": 0.6}, {"from": 31425, "to": 31428, "width": 0.6}, {"from": 26648, "to": 26558, "width": 0.6}, {"from": 26648, "to": 26548, "width": 0.6}, {"from": 26648, "to": 26647, "width": 0.6}, {"from": 26648, "to": 26546, "width": 0.6}, {"from": 26648, "to": 26557, "width": 0.6}, {"from": 26648, "to": 26556, "width": 0.6}, {"from": 26648, "to": 26559, "width": 0.6}, {"from": 26648, "to": 26555, "width": 0.6}, {"from": 26554, "to": 26558, "width": 0.6}, {"from": 26554, "to": 26548, "width": 0.6}, {"from": 26554, "to": 26547, "width": 0.6}, {"from": 26554, "to": 26549, "width": 0.6}, {"from": 26554, "to": 26559, "width": 0.6}, {"from": 26554, "to": 26557, "width": 0.6}, {"from": 26554, "to": 26555, "width": 0.6}, {"from": 26554, "to": 26545, "width": 0.6}, {"from": 26554, "to": 26556, "width": 0.6}, {"from": 26554, "to": 26560, "width": 0.6}, {"from": 26554, "to": 26647, "width": 0.6}, {"from": 26554, "to": 26546, "width": 0.6}, {"from": 26554, "to": 31434, "width": 0.6}, {"from": 26558, "to": 26559, "width": 0.6}, {"from": 26558, "to": 26555, "width": 0.6}, {"from": 26558, "to": 26556, "width": 0.6}, {"from": 26558, "to": 26546, "width": 0.6}, {"from": 26558, "to": 26557, "width": 0.6}, {"from": 26558, "to": 26549, "width": 0.6}, {"from": 26558, "to": 26545, "width": 0.6}, {"from": 26558, "to": 26548, "width": 0.6}, {"from": 26558, "to": 26547, "width": 0.6}, {"from": 26558, "to": 26647, "width": 0.6}, {"from": 26696, "to": 26698, "width": 0.6}, {"from": 26696, "to": 26693, "width": 0.6}, {"from": 26696, "to": 26695, "width": 0.6}, {"from": 26696, "to": 26699, "width": 0.6}, {"from": 26698, "to": 26699, "width": 0.6}, {"from": 26698, "to": 26695, "width": 0.6}, {"from": 26698, "to": 26694, "width": 0.6}, {"from": 26698, "to": 26693, "width": 0.6}, {"from": 31426, "to": 31427, "width": 0.6}, {"from": 31426, "to": 31428, "width": 0.6}, {"from": 31427, "to": 31428, "width": 0.6}, {"from": 26546, "to": 26547, "width": 0.6}, {"from": 26546, "to": 26548, "width": 0.6}, {"from": 26546, "to": 26559, "width": 0.6}, {"from": 26546, "to": 26557, "width": 0.6}, {"from": 26546, "to": 26555, "width": 0.6}, {"from": 26546, "to": 26545, "width": 0.6}, {"from": 26546, "to": 26549, "width": 0.6}, {"from": 26546, "to": 26556, "width": 0.6}, {"from": 26546, "to": 26647, "width": 0.6}, {"from": 26547, "to": 26549, "width": 0.6}, {"from": 26547, "to": 26545, "width": 0.6}, {"from": 26547, "to": 26559, "width": 0.6}, {"from": 26547, "to": 26557, "width": 0.6}, {"from": 26547, "to": 26560, "width": 0.6}, {"from": 26547, "to": 26555, "width": 0.6}, {"from": 26547, "to": 26647, "width": 0.6}, {"from": 26547, "to": 26548, "width": 0.6}, {"from": 26548, "to": 26557, "width": 0.6}, {"from": 26548, "to": 26559, "width": 0.6}, {"from": 26548, "to": 26549, "width": 0.6}, {"from": 26548, "to": 26555, "width": 0.6}, {"from": 26548, "to": 26556, "width": 0.6}, {"from": 26548, "to": 26545, "width": 0.6}, {"from": 26548, "to": 26530, "width": 0.6}, {"from": 26548, "to": 31441, "width": 0.6}, {"from": 26559, "to": 26556, "width": 0.6}, {"from": 26559, "to": 26555, "width": 0.6}, {"from": 26559, "to": 26557, "width": 0.6}, {"from": 26559, "to": 26549, "width": 0.6}, {"from": 26559, "to": 26647, "width": 0.6}, {"from": 26556, "to": 26557, "width": 0.6}, {"from": 26556, "to": 26555, "width": 0.6}, {"from": 26556, "to": 26647, "width": 0.6}, {"from": 26556, "to": 26549, "width": 0.6}, {"from": 26556, "to": 31441, "width": 0.6}, {"from": 26557, "to": 26549, "width": 0.6}, {"from": 26557, "to": 26555, "width": 0.6}, {"from": 26557, "to": 26545, "width": 0.6}, {"from": 26557, "to": 26560, "width": 0.6}, {"from": 26557, "to": 31441, "width": 0.6}, {"from": 26804, "to": 26798, "width": 0.6}, {"from": 26545, "to": 26549, "width": 0.6}, {"from": 26545, "to": 26560, "width": 0.6}, {"from": 26545, "to": 26646, "width": 0.6}, {"from": 26545, "to": 26555, "width": 0.6}, {"from": 26545, "to": 31436, "width": 0.6}, {"from": 26549, "to": 26555, "width": 0.6}, {"from": 26549, "to": 26560, "width": 0.6}, {"from": 26549, "to": 26647, "width": 0.6}, {"from": 26549, "to": 31434, "width": 0.6}, {"from": 28491, "to": 28487, "width": 0.6}, {"from": 28491, "to": 28490, "width": 0.6}, {"from": 28490, "to": 28487, "width": 0.6}, {"from": 26555, "to": 26560, "width": 0.6}, {"from": 26798, "to": 26692, "width": 0.6}, {"from": 26693, "to": 26695, "width": 0.6}, {"from": 26693, "to": 26699, "width": 0.6}, {"from": 26693, "to": 26694, "width": 0.6}, {"from": 26693, "to": 26692, "width": 0.6}, {"from": 31437, "to": 31440, "width": 0.6}, {"from": 31437, "to": 31439, "width": 0.6}, {"from": 31437, "to": 26561, "width": 0.6}, {"from": 31437, "to": 31441, "width": 0.6}, {"from": 31437, "to": 26563, "width": 0.6}, {"from": 31440, "to": 31439, "width": 0.6}, {"from": 31440, "to": 31441, "width": 0.6}, {"from": 26560, "to": 26646, "width": 0.6}, {"from": 26646, "to": 26647, "width": 0.6}, {"from": 26695, "to": 26699, "width": 0.6}, {"from": 26695, "to": 26700, "width": 0.6}, {"from": 26699, "to": 26694, "width": 0.6}, {"from": 26699, "to": 26700, "width": 0.6}, {"from": 26699, "to": 26692, "width": 0.6}, {"from": 27661, "to": 27711, "width": 0.6}, {"from": 27711, "to": 27721, "width": 0.6}, {"from": 27711, "to": 27719, "width": 0.6}, {"from": 27711, "to": 27774, "width": 0.6}, {"from": 27719, "to": 27773, "width": 0.6}, {"from": 27719, "to": 27721, "width": 0.6}, {"from": 27719, "to": 27775, "width": 0.6}, {"from": 27719, "to": 27774, "width": 0.6}, {"from": 27773, "to": 27775, "width": 0.6}, {"from": 27773, "to": 27774, "width": 0.6}, {"from": 27773, "to": 27721, "width": 0.6}, {"from": 27721, "to": 27774, "width": 0.6}, {"from": 27721, "to": 27775, "width": 0.6}, {"from": 28800, "to": 28807, "width": 0.6}, {"from": 28807, "to": 28802, "width": 0.6}, {"from": 31439, "to": 31441, "width": 0.6}, {"from": 31439, "to": 26561, "width": 0.6}, {"from": 31439, "to": 26563, "width": 0.6}, {"from": 26561, "to": 31444, "width": 0.6}, {"from": 26692, "to": 26700, "width": 0.6}, {"from": 26692, "to": 26694, "width": 0.6}, {"from": 26562, "to": 26563, "width": 0.6}, {"from": 26562, "to": 31444, "width": 0.6}, {"from": 26442, "to": 26455, "width": 0.6}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
