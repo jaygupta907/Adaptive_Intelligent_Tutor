@@ -2,50 +2,79 @@
 
 import numpy as np
 import os
-from rl_tutor import config, utils
+from collections import deque
 from rl_tutor.environment import RocketPropulsionEnv
 from rl_tutor.agent import PPOAgent
+from rl_tutor import config, utils
 
 def main():
-    """Main function to run the PPO training loop."""
+    """Main training loop for the simplified graph traversal task."""
+    if not os.path.exists(config.MODEL_DIR):
+        os.makedirs(config.MODEL_DIR)
+        
     graph = utils.create_concept_graph()
     utils.visualize_graph(graph)
-    
-    env = RocketPropulsionEnv(graph)
-    agent = PPOAgent()
-    
-    print("🚀 Starting training for Rocket Propulsion Tutor Agent (PPO)...")
 
-    total_timesteps = 0
-    for e in range(config.N_EPISODES):
+    env = RocketPropulsionEnv(graph)
+    
+    # Calculate dimensions and initialize agent
+    state_dim = len(config.TOPICS) * 2
+    action_dim = len(config.TOPICS)
+    agent = PPOAgent(state_dim, action_dim)
+
+    print("🚀 Starting training for RL Tutor Agent (Graph Coverage Task)...")
+
+    scores_deque = deque(maxlen=100)
+    mastered_topics_deque = deque(maxlen=100)
+    
+    states, actions, rewards, next_states, dones, log_probs = [], [], [], [], [], []
+
+    timestep = 0
+    for e in range(1, config.N_EPISODES + 1):
         state = env.reset()
-        state = np.reshape(state, [1, config.STATE_SIZE])
-        episode_reward = 0
+        state = np.reshape(state, [1, state_dim])
+        
+        episode_score = 0
         
         for step in range(config.MAX_STEPS_PER_EPISODE):
-            total_timesteps += 1
+            timestep += 1
             
-            valid_actions = env._get_valid_actions()
-            if not valid_actions: break
-
-            action, prob = agent.act(state, valid_actions)
-            if action is None: continue
+            valid_actions = env._get_askable_actions()
+            if not valid_actions:
+                break
+                
+            action, log_prob = agent.act(state, valid_actions)
             
             next_state, reward, done, _ = env.step(action)
-            episode_reward += reward
-            
-            agent.remember(state[0], action, prob, reward, next_state, done)
-            state = np.reshape(next_state, [1, config.STATE_SIZE])
-            
-            if total_timesteps % config.UPDATE_TIMESTEPS == 0:
-                agent.learn()
+            next_state = np.reshape(next_state, [1, state_dim])
 
-            if done: break
+            states.append(state[0])
+            actions.append(action)
+            rewards.append(reward)
+            next_states.append(next_state[0])
+            dones.append(done)
+            log_probs.append(log_prob)
+
+            state = next_state
+            episode_score += reward
+
+            if timestep % config.UPDATE_TIMESTEPS == 0 and len(states) > 0:
+                agent.learn(states, actions, rewards, next_states, dones, log_probs)
+                states, actions, rewards, next_states, dones, log_probs = [], [], [], [], [], []
+
+            if done:
+                break
         
-        print(f"Episode: {e+1}/{config.N_EPISODES}, Steps: {step+1}, Total Reward: {episode_reward:.2f}")
+        scores_deque.append(episode_score)
+        mastered_topics_deque.append(len(env.mastered_topics_in_episode))
+        
+        if e % 50 == 0 or e == 1:
+            avg_score = np.mean(scores_deque)
+            avg_mastered = np.mean(mastered_topics_deque)
+            print(f"Ep {e}/{config.N_EPISODES} | Avg Score: {avg_score:.2f} | Avg Mastered: {avg_mastered:.1f}/{action_dim}")
 
     agent.save()
-    print("✅ Training complete.")
+    print("\nTraining complete. Model saved.")
 
 if __name__ == "__main__":
     main()

@@ -1,81 +1,90 @@
 # rl_tutor/environment.py
 
 import numpy as np
-from . import config, utils
+import networkx as nx
+from . import config
 
 class RocketPropulsionEnv:
     """
-    Manages the student's knowledge state (the heatmap) and rewards.
+    A simplified environment where the goal is to cover all topics in the graph.
+    There is no student simulation; asking about a topic increases proficiency.
     """
     def __init__(self, graph):
         self.graph = graph
-        self.topic_map = {i: topic for i, topic in enumerate(config.TOPICS)}
-        
+        self.topics = config.TOPICS
+        self.num_topics = len(self.topics)
+        self.topic_map = {i: topic for i, topic in enumerate(self.topics)}
+
         self.prereq_indices = {
-            i: [config.TOPICS.index(p) for p, _ in self.graph.in_edges(topic)]
+            i: [self.topics.index(p) for p, _ in self.graph.in_edges(topic)]
             for i, topic in self.topic_map.items()
         }
-        
-        self.state = np.zeros(config.STATE_SIZE)
-        self._true_mastery = np.zeros(config.STATE_SIZE)
-        self.mastered_topics_in_episode = set()
+        self.state = self.reset()
 
-    def _get_valid_actions(self):
-        """Returns a list of topic indices that can be asked about."""
-        valid_actions = []
-        for i in range(config.STATE_SIZE):
-            if i in self.mastered_topics_in_episode:
-                continue
-
+    def _get_unlock_mask(self):
+        """Determines which topics are available based on prerequisite proficiency."""
+        unlock_mask = np.zeros(self.num_topics)
+        for i in range(self.num_topics):
             prereqs = self.prereq_indices.get(i, [])
-            if not prereqs or all(self.state[p_idx] >= config.PROFICIENCY_THRESHOLD for p_idx in prereqs):
-                valid_actions.append(i)
-        
-        if not valid_actions:
-            valid_actions = [i for i in range(config.STATE_SIZE) if i not in self.mastered_topics_in_episode]
-        
-        return valid_actions
+            if not prereqs or all(self.proficiency[p_idx] >= config.PROFICIENCY_THRESHOLD for p_idx in prereqs):
+                unlock_mask[i] = 1
+        return unlock_mask
+
+    def _get_askable_actions(self):
+        """Returns a list of topic indices that are currently unlocked."""
+        return [i for i, unlocked in enumerate(self.unlock_mask) if unlocked]
 
     def reset(self):
-        """Resets the environment for a new student/episode."""
-        self.state = np.zeros(config.STATE_SIZE)
-        self._true_mastery = np.random.uniform(0.2, 0.8, config.STATE_SIZE)
+        """Resets the environment for a new episode."""
+        self.proficiency = np.zeros(self.num_topics)
+        self.unlock_mask = self._get_unlock_mask()
         self.mastered_topics_in_episode = set()
-        return self.state
+        self.step_count = 0
+        
+        # State is now just proficiency and the unlock mask
+        return np.concatenate([self.proficiency, self.unlock_mask])
 
     def step(self, action_idx):
-        """Executes one time step: ask a question and get feedback."""
-        prob_correct = self._true_mastery[action_idx]
-        is_correct = np.random.random() < prob_correct
+        """
+        Executes one step. "Asking" about a topic deterministically increases its proficiency.
+        """
+        self.step_count += 1
+        
+        # --- REWARD CALCULATION ---
+        reward = -config.ASKING_COST
+        
+        # Penalty for re-visiting a mastered topic
+        if self.proficiency[action_idx] >= config.MASTERY_THRESHOLD:
+            reward -= config.REPEATED_QUESTION_PENALTY
+            
+        # Deterministically increase proficiency for the chosen topic
+        # It takes multiple visits to master a topic
+        self.proficiency[action_idx] += 0.4
+        self.proficiency[action_idx] = min(1.0, self.proficiency[action_idx])
 
-        old_state = np.copy(self.state)
-        
-        if is_correct:
-            self.state[action_idx] += 0.25
-        else:
-            self.state[action_idx] -= 0.10
-        
-        self.state = np.clip(self.state, 0, 1)
-        
-        # --- NEW REWARD LOGIC ---
-        reward = 0
-        
-        # 1. First-Time Mastery Bonus
-        if old_state[action_idx] < config.MASTERY_THRESHOLD and self.state[action_idx] >= config.MASTERY_THRESHOLD:
-            reward += config.FIRST_MASTERY_BONUS
+        # Check for first-time mastery of the topic
+        if self.proficiency[action_idx] >= config.MASTERY_THRESHOLD and action_idx not in self.mastered_topics_in_episode:
             self.mastered_topics_in_episode.add(action_idx)
+            reward += config.FIRST_MASTERY_BONUS
 
-        # 2. Base reward from proficiency gain (and cost)
-        proficiency_gain = np.sum(self.state) - np.sum(old_state)
-        reward += proficiency_gain - config.ASKING_COST
-
-        # 3. Check for episode completion
-        mastery_ratio = len(self.mastered_topics_in_episode) / config.STATE_SIZE
-        done = mastery_ratio >= config.COMPLETION_THRESHOLD
-
-        # 4. Completion Bonus
-        if done:
+        # Check if this action unlocked new topics
+        old_unlock_mask = self.unlock_mask
+        self.unlock_mask = self._get_unlock_mask()
+        num_newly_unlocked = np.sum(self.unlock_mask) - np.sum(old_unlock_mask)
+        if num_newly_unlocked > 0:
+            reward += num_newly_unlocked * config.UNLOCK_BONUS
+            
+        # Check for completion of the entire graph
+        done = False
+        if len(self.mastered_topics_in_episode) >= config.COMPLETION_TARGET:
             reward += config.COMPLETION_BONUS
+            done = True
+        
+        # End episode if it runs too long
+        if self.step_count >= config.MAX_STEPS_PER_EPISODE:
+            done = True
+
+        self.state = np.concatenate([self.proficiency, self.unlock_mask])
         
         return self.state, reward, done, {}
 

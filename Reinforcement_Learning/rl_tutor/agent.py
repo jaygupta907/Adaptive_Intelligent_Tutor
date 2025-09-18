@@ -1,127 +1,133 @@
 # rl_tutor/agent.py
 
+import torch
+import torch.nn as nn
+from torch.distributions import Categorical
 import numpy as np
-import tensorflow as tf
-from keras.models import Model, load_model
-from keras.layers import Input, Dense
-from keras.optimizers import Adam
-import tensorflow_probability as tfp
 import os
 from . import config
 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+class Actor(nn.Module):
+    def __init__(self, state_dim, action_dim, n_latent_var):
+        super(Actor, self).__init__()
+        self.layer1 = nn.Linear(state_dim, n_latent_var)
+        self.layer2 = nn.Linear(n_latent_var, n_latent_var)
+        self.action_layer = nn.Linear(n_latent_var, action_dim)
+        self.tanh = nn.Tanh()
+
+    def forward(self, state):
+        x = self.tanh(self.layer1(state))
+        x = self.tanh(self.layer2(x))
+        action_probs = torch.softmax(self.action_layer(x), dim=-1)
+        return action_probs
+
+class Critic(nn.Module):
+    def __init__(self, state_dim, n_latent_var):
+        super(Critic, self).__init__()
+        self.layer1 = nn.Linear(state_dim, n_latent_var)
+        self.layer2 = nn.Linear(n_latent_var, n_latent_var)
+        self.value_layer = nn.Linear(n_latent_var, 1)
+        self.tanh = nn.Tanh()
+
+    def forward(self, state):
+        x = self.tanh(self.layer1(state))
+        x = self.tanh(self.layer2(x))
+        state_value = self.value_layer(x)
+        return state_value
+
 class PPOAgent:
-    """Proximal Policy Optimization Agent."""
-    def __init__(self):
-        self.state_size = config.STATE_SIZE
-        self.action_size = config.ACTION_SIZE
+    def __init__(self, state_dim, action_dim):
+        self.actor = Actor(state_dim, action_dim, config.NETWORK_SIZE).to(device)
+        self.critic = Critic(state_dim, config.NETWORK_SIZE).to(device)
+        self.optimizer_actor = torch.optim.Adam(self.actor.parameters(), lr=config.ACTOR_LEARNING_RATE)
+        self.optimizer_critic = torch.optim.Adam(self.critic.parameters(), lr=config.CRITIC_LEARNING_RATE)
         
-        self.actor = self._build_actor()
-        self.critic = self._build_critic()
+        self.actor_old = Actor(state_dim, action_dim, config.NETWORK_SIZE).to(device)
+        self.actor_old.load_state_dict(self.actor.state_dict())
         
-        self.memory = []
+        self.MseLoss = nn.MSELoss()
 
-    def _build_actor(self):
-        state_input = Input(shape=(self.state_size,))
-        dense = Dense(64, activation='relu')(state_input)
-        dense = Dense(64, activation='relu')(dense)
-        action_probs = Dense(self.action_size, activation='softmax')(dense)
+    def act(self, state, valid_actions):
+        state = torch.FloatTensor(state.reshape(1, -1)).to(device)
+        action_probs = self.actor_old(state)
         
-        model = Model(inputs=state_input, outputs=action_probs)
-        model.compile(optimizer=Adam(learning_rate=config.ACTOR_LEARNING_RATE))
-        return model
-
-    def _build_critic(self):
-        state_input = Input(shape=(self.state_size,))
-        dense = Dense(64, activation='relu')(state_input)
-        dense = Dense(64, activation='relu')(dense)
-        state_value = Dense(1, activation='linear')(dense)
-
-        model = Model(inputs=state_input, outputs=state_value)
-        model.compile(optimizer=Adam(learning_rate=config.CRITIC_LEARNING_RATE), loss='mse')
-        return model
-
-    def remember(self, state, action, prob, reward, next_state, done):
-        self.memory.append((state, action, prob, reward, next_state, done))
-
-    def act(self, state, valid_actions, force_exploit=False):
-        if not valid_actions: return None, None
-
-        state = tf.convert_to_tensor(state, dtype=tf.float32)
-        action_probs = self.actor(state)[0].numpy()
+        mask = torch.full_like(action_probs, float('-inf'))
+        mask[:, valid_actions] = 0
+        masked_action_probs = action_probs + mask
         
-        masked_probs = np.zeros_like(action_probs)
-        masked_probs[valid_actions] = action_probs[valid_actions]
+        final_probs = torch.softmax(masked_action_probs, dim=-1)
+
+        dist = Categorical(final_probs)
+        action = dist.sample()
+        action_logprob = dist.log_prob(action)
         
-        sum_masked_probs = np.sum(masked_probs)
-        if sum_masked_probs > 1e-8:
-            masked_probs /= sum_masked_probs
-        else:
-            masked_probs = np.zeros_like(action_probs)
-            masked_probs[valid_actions] = 1.0 / len(valid_actions)
+        return action.item(), action_logprob.detach()
 
-        if force_exploit:
-            action = np.argmax(masked_probs)
-            return action, 1.0
-
-        dist = tfp.distributions.Categorical(probs=masked_probs)
-        action = dist.sample().numpy()
-        prob = dist.prob(action).numpy()
+    def learn(self, states, actions, rewards, next_states, dones, log_probs):
+        states = torch.FloatTensor(np.array(states)).to(device)
+        actions = torch.LongTensor(np.array(actions)).to(device)
+        rewards = torch.FloatTensor(np.array(rewards)).to(device)
+        next_states = torch.FloatTensor(np.array(next_states)).to(device)
+        dones = torch.BoolTensor(np.array(dones)).to(device)
+        old_log_probs = torch.FloatTensor(np.array(log_probs)).to(device)
         
-        return action, prob
-
-    def learn(self):
-        if not self.memory: return
-        
-        states, actions, old_probs, rewards, next_states, dones = zip(*self.memory)
-        self.memory.clear()
-
-        states = tf.convert_to_tensor(np.vstack(states), dtype=tf.float32)
-        actions = tf.convert_to_tensor(actions, dtype=tf.int32)
-        old_probs = tf.convert_to_tensor(old_probs, dtype=tf.float32)
-
-        values = self.critic.predict(states, verbose=0).flatten()
-        next_values = self.critic.predict(np.vstack(next_states), verbose=0).flatten()
-        
-        advantages = np.zeros(len(rewards))
-        last_advantage = 0
-        for t in reversed(range(len(rewards))):
-            delta = rewards[t] + config.GAMMA * next_values[t] * (1 - dones[t]) - values[t]
-            last_advantage = delta + config.GAMMA * config.GAE_LAMBDA * (1 - dones[t]) * last_advantage
-            advantages[t] = last_advantage
-        
-        advantages = tf.convert_to_tensor(advantages, dtype=tf.float32)
-        target_values = advantages + values
-        
-        for _ in range(config.EPOCHS_PER_UPDATE):
-            with tf.GradientTape() as tape:
-                new_probs_dist = tfp.distributions.Categorical(probs=self.actor(states))
-                new_probs = new_probs_dist.prob(actions)
-                ratio = new_probs / (old_probs + 1e-10)
-                
-                surrogate1 = ratio * advantages
-                surrogate2 = tf.clip_by_value(ratio, 1.0 - config.CLIP_EPSILON, 1.0 + config.CLIP_EPSILON) * advantages
-                
-                actor_loss = -tf.reduce_mean(tf.minimum(surrogate1, surrogate2))
-                entropy_loss = -tf.reduce_mean(new_probs_dist.entropy())
-                total_actor_loss = actor_loss + config.ENTROPY_BETA * entropy_loss
-
-            actor_grads = tape.gradient(total_actor_loss, self.actor.trainable_variables)
-            self.actor.optimizer.apply_gradients(zip(actor_grads, self.actor.trainable_variables))
-
-            self.critic.fit(states, target_values, epochs=1, verbose=0)
+        with torch.no_grad():
+            values = self.critic(states).squeeze()
+            next_values = self.critic(next_states).squeeze()
             
-    def load(self):
-        if os.path.exists(config.ACTOR_MODEL_PATH) and os.path.exists(config.CRITIC_MODEL_PATH):
-            self.actor = load_model(config.ACTOR_MODEL_PATH)
-            self.critic = load_model(config.CRITIC_MODEL_PATH)
-            print("PPO models loaded successfully.")
-        else:
-            print("Could not find saved models, starting from scratch.")
+            deltas = rewards + config.GAMMA * next_values * (~dones) - values
+            advantages = torch.zeros_like(rewards)
+            last_advantage = 0
+            for t in reversed(range(len(rewards))):
+                advantages[t] = deltas[t] + config.GAMMA * config.GAE_LAMBDA * last_advantage * (~dones[t])
+                last_advantage = advantages[t]
+            
+            returns = advantages + values
+
+        advantages = (advantages - advantages.mean()) / (advantages.std() + 1e-8)
+
+        for _ in range(config.EPOCHS_PER_UPDATE):
+            action_probs = self.actor(states)
+            dist = Categorical(action_probs)
+            
+            log_probs_new = dist.log_prob(actions)
+            dist_entropy = dist.entropy()
+            state_values = self.critic(states).squeeze()
+            
+            ratios = torch.exp(log_probs_new - old_log_probs.detach())
+            
+            surr1 = ratios * advantages
+            surr2 = torch.clamp(ratios, 1 - config.CLIP_EPSILON, 1 + config.CLIP_EPSILON) * advantages
+            
+            actor_loss = -torch.min(surr1, surr2).mean()
+            critic_loss = self.MseLoss(state_values, returns)
+            entropy_loss = -config.ENTROPY_BETA * dist_entropy.mean()
+            
+            loss = actor_loss + 0.5 * critic_loss + entropy_loss
+
+            self.optimizer_actor.zero_grad()
+            self.optimizer_critic.zero_grad()
+            loss.backward()
+            self.optimizer_actor.step()
+            self.optimizer_critic.step()
+            
+        self.actor_old.load_state_dict(self.actor.state_dict())
 
     def save(self):
-        if not os.path.exists(config.MODEL_DIR):
-            os.makedirs(config.MODEL_DIR)
-        self.actor.save(config.ACTOR_MODEL_PATH)
-        self.critic.save(config.CRITIC_MODEL_PATH)
-        print(f"PPO models saved to {config.MODEL_DIR}/")
+        actor_path = os.path.join(config.MODEL_DIR, "ppo_actor.pth")
+        critic_path = os.path.join(config.MODEL_DIR, "ppo_critic.pth")
+        
+        torch.save(self.actor.state_dict(), actor_path)
+        torch.save(self.critic.state_dict(), critic_path)
+        print(f"Models saved to {config.MODEL_DIR}")
+
+    def load(self):
+        actor_path = os.path.join(config.MODEL_DIR, "ppo_actor.pth")
+        critic_path = os.path.join(config.MODEL_DIR, "ppo_critic.pth")
+
+        self.actor.load_state_dict(torch.load(actor_path, map_location=device))
+        self.critic.load_state_dict(torch.load(critic_path, map_location=device))
+        self.actor_old.load_state_dict(self.actor.state_dict())
 

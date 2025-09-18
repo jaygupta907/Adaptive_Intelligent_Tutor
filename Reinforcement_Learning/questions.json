@@ -1,0 +1,2478 @@
+[
+    {
+        "text": "What fundamental law of physics is the primary principle behind rocket propulsion?",
+        "options": [
+            "Newton's First Law (Inertia)",
+            "The Ideal Gas Law",
+            "Newton's Third Law (Action-Reaction)",
+            "The Law of Universal Gravitation"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [0, 4]
+    },
+    {
+        "text": "If a rocket expels gas downwards with a force of 1,000 Newtons, what is the magnitude of the upward force on the rocket?",
+        "options": [
+            "500 Newtons",
+            "1,000 Newtons",
+            "2,000 Newtons",
+            "It depends on the rocket's mass"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [0, 4]
+    },
+    {
+        "text": "In a closed system, if a rocket at rest fires its engine, what is the total momentum of the rocket-plus-exhaust system?",
+        "options": [
+            "It increases",
+            "It decreases",
+            "It remains zero",
+            "It becomes negative"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [0]
+    },
+    {
+        "text": "The relationship PV=nRT is known as what?",
+        "options": [
+            "The Law of Thermodynamics",
+            "The Ideal Gas Law",
+            "The Momentum Principle",
+            "Boyle's Law"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [1]
+    },
+    {
+        "text": "According to the Ideal Gas Law, if you increase the temperature of a gas in a fixed volume (like a combustion chamber), what happens to the pressure?",
+        "options": [
+            "It decreases",
+            "It stays the same",
+            "It increases",
+            "It becomes zero"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [1, 7]
+    },
+    {
+        "text": "If the temperature of a gas is held constant, what happens to its volume if the pressure is doubled?",
+        "options": [
+            "It doubles",
+            "It is halved",
+            "It stays the same",
+            "It quadruples"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [1]
+    },
+    {
+        "text": "What is the First Law of Thermodynamics primarily concerned with?",
+        "options": [
+            "Conservation of Mass",
+            "Conservation of Energy",
+            "The direction of heat flow",
+            "Absolute zero temperature"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [2]
+    },
+    {
+        "text": "The Second Law of Thermodynamics states that the total entropy of an isolated system will always...",
+        "options": [
+            "Decrease over time",
+            "Remain constant",
+            "Increase over time or remain constant",
+            "Fluctuate randomly"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [2]
+    },
+    {
+        "text": "In the context of a rocket engine, the conversion of chemical energy in propellants into hot gas is an example of which thermodynamic process?",
+        "options": [
+            "Isothermal expansion",
+            "Adiabatic compression",
+            "Exothermic reaction",
+            "Endothermic reaction"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [2, 5, 7]
+    },
+    {
+        "text": "Which mechanism of heat transfer is most dominant in moving thermal energy from the hot combustion gases to the chamber walls?",
+        "options": [
+            "Conduction",
+            "Convection",
+            "Radiation",
+            "Advection"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [3, 7]
+    },
+    {
+        "text": "Which mode of heat transfer does NOT require a medium to propagate?",
+        "options": [
+            "Conduction",
+            "Convection",
+            "Radiation",
+            "All require a medium"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [3]
+    },
+    {
+        "text": "Why is regenerative cooling, where propellant is circulated through passages in the nozzle wall, an effective technique?",
+        "options": [
+            "It adds mass to the nozzle, making it stronger",
+            "It preheats the propellant before combustion, increasing efficiency",
+            "It slows down the exhaust gases",
+            "It cools the rocket's exterior"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [3, 6]
+    },
+    {
+        "text": "A substance that undergoes a chemical reaction to produce hot gases for propulsion is called a:",
+        "options": [
+            "Catalyst",
+            "Coolant",
+            "Propellant",
+            "Capacitor"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [5, 8]
+    },
+    {
+        "text": "What are the two main components of a bipropellant system?",
+        "options": [
+            "Fuel and Oxidizer",
+            "Acid and Base",
+            "Solid and Liquid",
+            "Gas and Plasma"
+        ],
+        "correct_answer_index": 0,
+        "topic_indices": [5, 8]
+    },
+    {
+        "text": "Propellants that ignite spontaneously on contact with each other are called:",
+        "options": [
+            "Cryogenic",
+            "Hypergolic",
+            "Monopropellants",
+            "Solid propellants"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [5, 8]
+    },
+    {
+        "text": "The primary purpose of a rocket engine's nozzle is to:",
+        "options": [
+            "Mix the fuel and oxidizer",
+            "Cool the engine",
+            "Accelerate the exhaust gases to supersonic speeds",
+            "Contain the initial combustion"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [6]
+    },
+    {
+        "text": "What is the name of the narrowest part of a de Laval nozzle?",
+        "options": [
+            "The bell",
+            "The diffuser",
+            "The throat",
+            "The combustion chamber"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [6]
+    },
+    {
+        "text": "A nozzle operating at sea level whose exit pressure is lower than the ambient atmospheric pressure is described as:",
+        "options": [
+            "Under-expanded",
+            "Perfectly expanded",
+            "Over-expanded",
+            "Isentropic"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [6]
+    },
+    {
+        "text": "The part of the rocket engine where propellants are burned to create high-pressure, high-temperature gas is the:",
+        "options": [
+            "Nozzle",
+            "Fuel Tank",
+            "Combustion Chamber",
+            "Turbopump"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [7]
+    },
+    {
+        "text": "What is a major design challenge for a combustion chamber?",
+        "options": [
+            "Keeping the gases cool",
+            "Ensuring complete and stable combustion",
+            "Making it as heavy as possible",
+            "Minimizing the pressure"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [7]
+    },
+    {
+        "text": "Which of these is a common type of liquid propellant?",
+        "options": [
+            "Wood",
+            "Gunpowder",
+            "Liquid Oxygen (LOX)",
+            "Polyvinyl Chloride (PVC)"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [8]
+    },
+    {
+        "text": "What is a key advantage of solid propellants over liquid propellants?",
+        "options": [
+            "They can be throttled easily",
+            "They can be stored for long periods with high reliability",
+            "They have a higher specific impulse",
+            "They require complex turbopumps"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [8]
+    },
+    {
+        "text": "Thrust is a force calculated as the product of mass flow rate and what other quantity?",
+        "options": [
+            "Exhaust velocity",
+            "Chamber pressure",
+            "Ambient temperature",
+            "Rocket mass"
+        ],
+        "correct_answer_index": 0,
+        "topic_indices": [9]
+    },
+    {
+        "text": "If two rockets have the same mass flow rate, but Rocket A has a higher exhaust velocity, which rocket produces more thrust?",
+        "options": [
+            "Rocket B",
+            "They produce the same thrust",
+            "Rocket A",
+            "Cannot be determined"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [9]
+    },
+    {
+        "text": "What force opposes a rocket's motion as it travels through the atmosphere?",
+        "options": [
+            "Gravity",
+            "Thrust",
+            "Lift",
+            "Atmospheric Drag"
+        ],
+        "correct_answer_index": 3,
+        "topic_indices": [10]
+    },
+    {
+        "text": "Why are rockets typically shaped with a pointed nose cone?",
+        "options": [
+            "To increase their weight",
+            "To make them look better",
+            "To reduce aerodynamic drag",
+            "To help with steering in space"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [10]
+    },
+    {
+        "text": "Specific Impulse (Isp) is a measure of a rocket engine's:",
+        "options": [
+            "Total thrust",
+            "Fuel efficiency",
+            "Maximum speed",
+            "Weight"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [11]
+    },
+    {
+        "text": "An engine with a higher Specific Impulse (Isp) will produce more thrust for the same amount of:",
+        "options": [
+            "Time",
+            "Propellant mass flow",
+            "Chamber pressure",
+            "Nozzle size"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [11]
+    },
+    {
+        "text": "The practice of discarding a section of a rocket once its propellant has been consumed is called:",
+        "options": [
+            "Aerobraking",
+            "Staging",
+            "Docking",
+            "Payload deployment"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [12]
+    },
+    {
+        "text": "What is the primary reason for using rocket staging?",
+        "options": [
+            "To make the rocket taller",
+            "To improve the rocket's mass ratio by shedding dead weight",
+            "To have multiple engine types",
+            "To make recovery easier"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [12]
+    },
+    {
+        "text": "The Tsiolkovsky Rocket Equation relates a rocket's final velocity change (delta-v) to its exhaust velocity and what other property?",
+        "options": [
+            "Its initial and final mass (mass ratio)",
+            "Its total thrust",
+            "Its launch angle",
+            "The atmospheric pressure"
+        ],
+        "correct_answer_index": 0,
+        "topic_indices": [13]
+    },
+    {
+        "text": "According to the Tsiolkovsky Rocket Equation, what is the most effective way to achieve a large delta-v?",
+        "options": [
+            "Decrease the exhaust velocity",
+            "Increase the rocket's final mass",
+            "Have a high mass ratio (initial mass / final mass)",
+            "Launch from a high altitude"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [13]
+    },
+    {
+        "text": "What is the term for a stable path that an object takes around a celestial body?",
+        "options": [
+            "A trajectory",
+            "An orbit",
+            "An escape velocity",
+            "A free-fall"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [14]
+    },
+    {
+        "text": "An orbital maneuver that uses thrust to increase a satellite's altitude is often called a:",
+        "options": [
+            "De-orbit burn",
+            "Prograde burn",
+            "Retrograde burn",
+            "Plane change burn"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [14, 9]
+    },
+    {
+        "text": "The most fuel-efficient way to move a spacecraft between two circular orbits in the same plane is by using a(n):",
+        "options": [
+            "Direct injection",
+            "Bi-elliptic transfer",
+            "Hohmann transfer",
+            "Gravity assist"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [14]
+    },
+    {
+        "text": "Why does a spinning ice skater speed up when they pull their arms in?",
+        "options": [
+            "Conservation of Energy",
+            "Conservation of Momentum",
+            "Conservation of Angular Momentum",
+            "Newton's Second Law"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [0]
+    },
+    {
+        "text": "What is a primary advantage of cryogenic propellants like liquid hydrogen and liquid oxygen?",
+        "options": [
+            "They are easy to store at room temperature",
+            "They are not explosive",
+            "They have a very high specific impulse (Isp)",
+            "They are non-toxic"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [8, 11]
+    },
+    {
+        "text": "The total thrust of a rocket is the sum of the momentum thrust and the _______ thrust component.",
+        "options": [
+            "Pressure",
+            "Gravitational",
+            "Drag",
+            "Lift"
+        ],
+        "correct_answer_index": 0,
+        "topic_indices": [9]
+    },
+    {
+        "text": "As a rocket ascends, what generally happens to the atmospheric drag force acting on it?",
+        "options": [
+            "It increases continuously",
+            "It decreases continuously",
+            "It first increases, then decreases",
+            "It remains constant"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [10]
+    },
+    {
+        "text": "Why is an engine's Specific Impulse (Isp) typically higher in a vacuum than in the atmosphere?",
+        "options": [
+            "There is no gravity in a vacuum",
+            "The absence of back-pressure allows for greater exhaust expansion",
+            "The fuel burns hotter in a vacuum",
+            "The rocket is lighter"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [11]
+    },
+    {
+        "text": "The Space Shuttle used two solid rocket boosters attached to a central liquid-fuel tank. This is an example of what kind of staging?",
+        "options": [
+            "Serial staging",
+            "Parallel staging",
+            "Single-stage-to-orbit",
+            "Tandem staging"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [12]
+    },
+    {
+        "text": "A key limitation of the Tsiolkovsky Rocket Equation is that it ignores the effects of:",
+        "options": [
+            "Exhaust velocity",
+            "Mass ratio",
+            "Gravity and atmospheric drag",
+            "Propellant type"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [13]
+    },
+    {
+        "text": "To change the tilt of a satellite's orbit (its inclination), where must the rocket engine be fired?",
+        "options": [
+            "At the lowest point (periapsis)",
+            "At the highest point (apoapsis)",
+            "At one of the orbital nodes",
+            "Anywhere in the orbit"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [14]
+    },
+    {
+        "text": "When is a rocket experiencing 'Max Q' during launch?",
+        "options": [
+            "Right at liftoff",
+            "When it leaves the atmosphere",
+            "When dynamic pressure is highest",
+            "Just before engine cutoff"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [10, 9]
+    },
+    {
+        "text": "A rocket's mass decreases as it burns fuel. This concept is central to which fundamental equation?",
+        "options": [
+            "The Ideal Gas Law",
+            "The Tsiolkovsky Rocket Equation",
+            "Newton's Second Law (F=ma)",
+            "The Law of Gravitation"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [13, 0]
+    },
+    {
+        "text": "What does the 'n' represent in the Ideal Gas Law equation PV=nRT?",
+        "options": [
+            "Number of molecules",
+            "Number of moles of gas",
+            "Newton's constant",
+            "Nozzle efficiency"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [1]
+    },
+    {
+        "text": "An 'oxidizer' is a chemical agent that does what in a combustion reaction?",
+        "options": [
+            "Provides the fuel",
+            "Absorbs heat",
+            "Supplies oxygen to burn the fuel",
+            "Acts as a catalyst"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [5]
+    },
+    {
+        "text": "Which of the following is NOT a primary concern related to atmospheric drag?",
+        "options": [
+            "Structural loads on the vehicle",
+            "Aerodynamic heating",
+            "Reduction in final velocity",
+            "Increase in specific impulse"
+        ],
+        "correct_answer_index": 3,
+        "topic_indices": [10, 11]
+    },
+    {
+        "text": "Which of these is NOT a type of orbit?",
+        "options": [
+            "Geostationary Orbit (GEO)",
+            "Low Earth Orbit (LEO)",
+            "Polar Orbit",
+            "Subsonic Orbit"
+        ],
+        "correct_answer_index": 3,
+        "topic_indices": [14]
+    },
+    {
+        "text": "What type of energy is converted into kinetic energy in a rocket engine?",
+        "options": [
+            "Potential Energy",
+            "Nuclear Energy",
+            "Chemical Energy",
+            "Electrical Energy"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [2, 5]
+    },
+    {
+        "text": "The speed of sound at the throat of an optimally expanded de Laval nozzle is:",
+        "options": [
+            "Subsonic",
+            "Mach 1",
+            "Supersonic",
+            "Hypersonic"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [6]
+    },
+    {
+        "text": "The force that pulls a rocket back towards Earth during ascent is:",
+        "options": [
+            "Thrust",
+            "Drag",
+            "Gravity",
+            "Lift"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [10, 0]
+    },
+    {
+        "text": "A rocket engine that uses a solid fuel and a liquid oxidizer is known as what type of engine?",
+        "options": [
+            "Bipropellant",
+            "Monopropellant",
+            "Hybrid",
+            "Cryogenic"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [8]
+    },
+    {
+        "text": "High-frequency pressure oscillations inside a combustion chamber, which can damage the engine, are known as:",
+        "options": [
+            "Chugging",
+            "Pogo oscillation",
+            "Combustion instability",
+            "Flameout"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [7]
+    },
+    {
+        "text": "For a rocket to achieve orbit, its final velocity must be sufficient to counteract what?",
+        "options": [
+            "Earth's rotation",
+            "Earth's magnetic field",
+            "Earth's gravitational pull",
+            "Solar wind"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [14, 9]
+    },
+    {
+        "text": "What does 'delta-v' budget mean in mission planning?",
+        "options": [
+            "The total financial cost of the mission",
+            "The total change in velocity required for all orbital maneuvers",
+            "The maximum velocity the rocket can achieve",
+            "The change in velocity during launch"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [13, 14]
+    },
+    {
+        "text": "Which of these materials would be best for insulating a component from heat via conduction?",
+        "options": [
+            "Copper",
+            "Steel",
+            "Aluminum",
+            "Aerogel"
+        ],
+        "correct_answer_index": 3,
+        "topic_indices": [3]
+    },
+    {
+        "text": "A monopropellant, like hydrazine, decomposes using what?",
+        "options": [
+            "A spark igniter",
+            "An oxidizer",
+            "A catalyst",
+            "Extreme pressure"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [5]
+    },
+    {
+        "text": "What is the primary function of a turbopump in a liquid-propellant rocket engine?",
+        "options": [
+            "To cool the engine",
+            "To generate electricity for the rocket",
+            "To deliver propellants to the combustion chamber at high pressure",
+            "To ignite the propellants"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [7, 8]
+    },
+    {
+        "text": "If you want to move a satellite from a lower orbit to a higher orbit, in which direction should you apply thrust?",
+        "options": [
+            "Opposite to the direction of motion (retrograde)",
+            "In the direction of motion (prograde)",
+            "Perpendicular to the orbital plane",
+            "Towards the Earth"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [14, 9]
+    },
+    {
+        "text": "The exhaust gas velocity of a rocket is primarily dependent on:",
+        "options": [
+            "The rocket's color",
+            "The launch location",
+            "The combustion temperature and the molecular weight of the exhaust gases",
+            "The size of the payload"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [9, 11]
+    },
+    {
+        "text": "Why are multi-stage rockets more efficient than single-stage rockets?",
+        "options": [
+            "They have more engines",
+            "They are more aerodynamic",
+            "They discard unnecessary mass, improving the mass ratio",
+            "They are easier to build"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [12, 13]
+    },
+    {
+        "text": "In the term 'LOX/RP-1', what does LOX stand for?",
+        "options": [
+            "Low Oxidation",
+            "Liquid Oxygen",
+            "Light Oxide",
+            "Lithium Oxide"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [8, 5]
+    },
+    {
+        "text": "The point in an orbit farthest from the Earth is called:",
+        "options": [
+            "Apogee",
+            "Perigee",
+            "Aphelion",
+            "Perihelion"
+        ],
+        "correct_answer_index": 0,
+        "topic_indices": [14]
+    },
+    {
+        "text": "Ablative cooling is a method of heat management that works by:",
+        "options": [
+            "Circulating a coolant through the walls",
+            "Radiating heat into space",
+            "Allowing a surface layer to burn away, carrying heat with it",
+            "Using a thick, insulating material"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [3, 7]
+    },
+    {
+        "text": "What does a 'prograde' orbit mean?",
+        "options": [
+            "An orbit in the opposite direction of the planet's rotation",
+            "An orbit in the same direction as the planet's rotation",
+            "An orbit that passes over the poles",
+            "A perfectly circular orbit"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [14]
+    },
+    {
+        "text": "The 'action' force in Newton's Third Law for a rocket is:",
+        "options": [
+            "The rocket moving upwards",
+            "The exhaust gas pushing on the combustion chamber",
+            "The exhaust gas being pushed out of the nozzle",
+            "Air pushing against the rocket"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [4, 0]
+    },
+    {
+        "text": "A gas-generator cycle is a type of engine cycle where:",
+        "options": [
+            "The entire propellant flow drives the turbine",
+            "A small portion of propellant is burned separately to power the turbopump",
+            "No turbopump is used",
+            "The engine uses electric pumps"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [7, 8]
+    },
+    {
+        "text": "What is 'ullage' in a propellant tank?",
+        "options": [
+            "The propellant itself",
+            "The empty space above the propellant",
+            "The pressure in the tank",
+            "A type of valve"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [5]
+    },
+    {
+        "text": "If a rocket's nozzle is perfectly expanded, its exit pressure is equal to:",
+        "options": [
+            "The chamber pressure",
+            "Zero",
+            "The ambient atmospheric pressure",
+            "Twice the ambient pressure"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [6, 9]
+    },
+    {
+        "text": "Which of these propellants is 'storable' at or near room temperature?",
+        "options": [
+            "Liquid Hydrogen",
+            "Liquid Oxygen",
+            "Hydrazine",
+            "Liquid Methane"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [8]
+    },
+    {
+        "text": "What is the primary cause of 'gravity drag' or 'gravity losses' during a launch?",
+        "options": [
+            "The rocket fighting against gravity to gain altitude",
+            "The increase in the rocket's mass",
+            "The friction from air",
+            "The curvature of the Earth"
+        ],
+        "correct_answer_index": 0,
+        "topic_indices": [9, 10]
+    },
+    {
+        "text": "The 'mass ratio' of a rocket stage is defined as:",
+        "options": [
+            "Payload mass / propellant mass",
+            "Propellant mass / total mass",
+            "Fully fueled mass / empty mass (after burnout)",
+            "Engine mass / total mass"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [12, 13]
+    },
+    {
+        "text": "A 'retrograde burn' is used to do what?",
+        "options": [
+            "Increase orbital speed and raise the orbit",
+            "Decrease orbital speed and lower the orbit",
+            "Change the orbital inclination",
+            "Rotate the spacecraft"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [14, 9]
+    },
+    {
+        "text": "Which law states that for a fixed amount of gas at constant temperature, the volume is inversely proportional to the pressure?",
+        "options": [
+            "Charles's Law",
+            "Gay-Lussac's Law",
+            "Avogadro's Law",
+            "Boyle's Law"
+        ],
+        "correct_answer_index": 3,
+        "topic_indices": [1]
+    },
+    {
+        "text": "The process of a solid propellant turning directly into gas during combustion is called:",
+        "options": [
+            "Melting",
+            "Evaporation",
+            "Sublimation",
+            "Decomposition"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [5, 8]
+    },
+    {
+        "text": "The shape of an orbit (e.g., circular, elliptical) is defined by its:",
+        "options": [
+            "Inclination",
+            "Eccentricity",
+            "Argument of perigee",
+            "Period"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [14]
+    },
+    {
+        "text": "What is the primary purpose of an injector in a liquid rocket engine?",
+        "options": [
+            "To ignite the propellants",
+            "To cool the chamber walls",
+            "To atomize and mix the propellants for efficient combustion",
+            "To filter impurities from the fuel"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [7]
+    },
+    {
+        "text": "In a solid rocket motor, the rate of thrust is primarily controlled by:",
+        "options": [
+            "A throttle valve",
+            "The geometry of the propellant grain (the shape it's molded in)",
+            "The type of nozzle",
+            "The external temperature"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [8, 9]
+    },
+    {
+        "text": "Why do rockets begin a 'gravity turn' shortly after launch?",
+        "options": [
+            "To increase drag",
+            "To use gravity to help steer the rocket horizontally",
+            "To cool the engine",
+            "To align with the Earth's magnetic field"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [10, 14]
+    },
+    {
+        "text": "Which of these has the highest specific impulse (Isp)?",
+        "options": [
+            "A solid rocket booster",
+            "An RP-1/LOX engine",
+            "A hydrogen/LOX engine",
+            "A hypergolic engine"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [11, 8]
+    },
+    {
+        "text": "The 'reaction' force in Newton's Third Law for a rocket is:",
+        "options": [
+            "The exhaust gas pushing the rocket forward",
+            "The exhaust gas being pushed out",
+            "Gravity pulling the rocket down",
+            "Air resistance"
+        ],
+        "correct_answer_index": 0,
+        "topic_indices": [4, 0]
+    },
+    {
+        "text": "A full-flow staged combustion cycle is highly efficient because:",
+        "options": [
+            "It is the simplest to build",
+            "It uses electric pumps",
+            "It sends all the propellant mass through the turbines and into the main chamber, wasting none",
+            "It does not require an igniter"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [7, 8]
+    },
+    {
+        "text": "The measure of a fluid's resistance to flow is called:",
+        "options": [
+            "Density",
+            "Viscosity",
+            "Pressure",
+            "Temperature"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [1, 3]
+    },
+    {
+        "text": "What is the approximate escape velocity from Earth's surface?",
+        "options": [
+            "8 km/s",
+            "11.2 km/s",
+            "15.5 km/s",
+            "20 km/s"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [14]
+    },
+    {
+        "text": "The 'pogo' oscillation is a dangerous, self-induced vibration in liquid rockets caused by:",
+        "options": [
+            "Aerodynamic flutter",
+            "Coupling between the engine's thrust and propellant feed lines",
+            "The guidance system overcorrecting",
+            "The stages separating"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [7, 9]
+    },
+    {
+        "text": "What is the main advantage of a pressure-fed engine cycle?",
+        "options": [
+            "High thrust",
+            "High efficiency",
+            "Simplicity and reliability",
+            "Ability to throttle deeply"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [7, 8]
+    },
+    {
+        "text": "An adiabatic process is one in which:",
+        "options": [
+            "Pressure is constant",
+            "Volume is constant",
+            "Temperature is constant",
+            "No heat is exchanged with the surroundings"
+        ],
+        "correct_answer_index": 3,
+        "topic_indices": [2, 6]
+    },
+    {
+        "text": "Which of these is a key factor in the Tsiolkovsky Rocket Equation?",
+        "options": [
+            "The rocket's color",
+            "The launch time of day",
+            "The natural logarithm of the mass ratio",
+            "The payload fairing diameter"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [13]
+    },
+    {
+        "text": "A polar orbit is useful for what type of satellite mission?",
+        "options": [
+            "Communications (geostationary)",
+            "Deep space exploration",
+            "Earth observation and mapping",
+            "GPS navigation"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [14]
+    },
+    {
+        "text": "The 'R' in the Ideal Gas Law (PV=nRT) is called what?",
+        "options": [
+            "The Reaction Constant",
+            "The Universal Gas Constant",
+            "The Reynolds Number",
+            "The Radiation Coefficient"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [1]
+    },
+    {
+        "text": "In a staged combustion cycle, the exhaust from the pre-burner that drives the turbine is:",
+        "options": [
+            "Dumped overboard",
+            "Recycled as coolant",
+            "Directed into the main combustion chamber",
+            "Stored in a separate tank"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [7]
+    },
+    {
+        "text": "Which of these is NOT a method of heat transfer?",
+        "options": [
+            "Conduction",
+            "Convection",
+            "Radiation",
+            "Sublimation"
+        ],
+        "correct_answer_index": 3,
+        "topic_indices": [3]
+    },
+    {
+        "text": "The 'impulse' in 'Specific Impulse' is a change in what quantity?",
+        "options": [
+            "Temperature",
+            "Pressure",
+            "Momentum",
+            "Altitude"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [11, 0]
+    },
+    {
+        "text": "The velocity required to maintain a stable circular orbit is always _______ the escape velocity at that same altitude.",
+        "options": [
+            "Greater than",
+            "Less than",
+            "Equal to",
+            "Unrelated to"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [14]
+    },
+    {
+        "text": "Why must the flow be subsonic in the combustion chamber?",
+        "options": [
+            "To increase pressure",
+            "To allow enough time for propellants to mix and burn completely",
+            "To keep the engine cool",
+            "It doesn't have to be subsonic"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [7, 6]
+    },
+    {
+        "text": "Which part of Newton's laws of motion deals with an object's resistance to change in its state of motion (inertia)?",
+        "options": [
+            "First Law",
+            "Second Law",
+            "Third Law",
+            "Law of Gravitation"
+        ],
+        "correct_answer_index": 0,
+        "topic_indices": [4]
+    },
+    {
+        "text": "What is the primary role of a binder in a solid propellant grain?",
+        "options": [
+            "To act as the oxidizer",
+            "To hold the fuel and oxidizer particles together in a solid matrix",
+            "To cool the motor casing",
+            "To increase the burn rate"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [5, 8]
+    },
+    {
+        "text": "A 'gravity assist' or 'slingshot' maneuver is used to:",
+        "options": [
+            "Land on a planet",
+            "Use a planet's gravity to change a spacecraft's speed and direction without using fuel",
+            "Slow down a spacecraft",
+            "Enter a stable orbit"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [14, 0]
+    },
+    {
+        "text": "The temperature at which a substance has no kinetic energy is known as:",
+        "options": [
+            "0 degrees Celsius",
+            "0 degrees Fahrenheit",
+            "Absolute Zero (0 Kelvin)",
+            "The freezing point of water"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [2, 1]
+    },
+    {
+        "text": "What is a 'payload fairing'?",
+        "options": [
+            "A type of engine",
+            "A nose cone that protects the payload from aerodynamic forces during launch",
+            "The final stage of a rocket",
+            "A docking mechanism"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [10, 12]
+    },
+    {
+        "text": "The point in an orbit closest to the Sun is called:",
+        "options": [
+            "Apogee",
+            "Perigee",
+            "Aphelion",
+            "Perihelion"
+        ],
+        "correct_answer_index": 3,
+        "topic_indices": [14]
+    },
+    {
+        "text": "If a rocket's thrust is greater than its weight, what will happen?",
+        "options": [
+            "It will not move",
+            "It will accelerate upwards",
+            "It will accelerate downwards",
+            "It will move at a constant velocity"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [9, 4]
+    },
+    {
+        "text": "What does a catalyst do in a chemical reaction?",
+        "options": [
+            "It gets consumed",
+            "It slows the reaction down",
+            "It speeds the reaction up without being consumed",
+            "It changes the products of the reaction"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [5]
+    },
+    {
+        "text": "An 'isentropic' process is one that is both adiabatic and:",
+        "options": [
+            "Reversible",
+            "Irreversible",
+            "Constant temperature",
+            "Constant pressure"
+        ],
+        "correct_answer_index": 0,
+        "topic_indices": [2, 6]
+    },
+    {
+        "text": "What is the main challenge of using liquid hydrogen as a fuel?",
+        "options": [
+            "It has a low specific impulse",
+            "It is very dense",
+            "Its extremely low temperature requires heavy insulation and complex handling",
+            "It is not a powerful fuel"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [8, 5]
+    },
+    {
+        "text": "The relationship F=ma is known as:",
+        "options": [
+            "Newton's First Law",
+            "Newton's Second Law",
+            "Newton's Third Law",
+            "The Rocket Equation"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [4]
+    },
+    {
+        "text": "In orbital mechanics, what does 'inclination' refer to?",
+        "options": [
+            "The speed of the satellite",
+            "The height of the orbit",
+            "The tilt of the orbit relative to the Earth's equator",
+            "The shape of the orbit"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [14]
+    },
+    {
+        "text": "What is the primary heat transfer method that warms the Earth from the Sun?",
+        "options": [
+            "Conduction",
+            "Convection",
+            "Radiation",
+            "Solar Wind"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [3]
+    },
+    {
+        "text": "If a rocket has a mass ratio of 10 and an exhaust velocity of 3 km/s, what is its approximate total delta-v?",
+        "options": [
+            "3.0 km/s",
+            "6.9 km/s",
+            "10.0 km/s",
+            "30.0 km/s"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [13]
+    },
+    {
+        "text": "The 'throat' of a nozzle is where the flow transitions from:",
+        "options": [
+            "Supersonic to subsonic",
+            "Subsonic to supersonic",
+            "Laminar to turbulent",
+            "Turbulent to laminar"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [6]
+    },
+    {
+        "text": "What is a 'geostationary' orbit?",
+        "options": [
+            "An orbit that passes over the poles",
+            "A very low orbit that decays quickly",
+            "An orbit where a satellite remains in the same spot above the Earth's surface",
+            "An orbit around the Sun"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [14]
+    },
+    {
+        "text": "A reaction where heat is absorbed from the surroundings is called:",
+        "options": [
+            "Exothermic",
+            "Endothermic",
+            "Isentropic",
+            "Adiabatic"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [2]
+    },
+    {
+        "text": "A pintle injector is a type of injector known for its:",
+        "options": [
+            "High complexity",
+            "Ability to be throttled over a wide range",
+            "Use in solid motors only",
+            "Low efficiency"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [7]
+    },
+    {
+        "text": "What is the boundary layer in fluid dynamics?",
+        "options": [
+            "The edge of the atmosphere",
+            "A layer of fluid near a surface where viscous effects are significant",
+            "The shockwave in front of a supersonic object",
+            "The separation point of stages"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [10, 3, 6]
+    },
+    {
+        "text": "The unit of 'seconds' for Specific Impulse comes from dividing total impulse by:",
+        "options": [
+            "The rocket's mass",
+            "The propellant weight",
+            "The propellant mass",
+            "The burn time"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [11]
+    },
+    {
+        "text": "Which of these is NOT a noble gas?",
+        "options": [
+            "Helium",
+            "Neon",
+            "Argon",
+            "Hydrogen"
+        ],
+        "correct_answer_index": 3,
+        "topic_indices": [1]
+    },
+    {
+        "text": "In a solid rocket, the propellant is typically called the:",
+        "options": [
+            "Mixture",
+            "Grain",
+            "Liquid",
+            "Core"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [8]
+    },
+    {
+        "text": "Which of these is a form of combustion instability?",
+        "options": [
+            "Max Q",
+            "Staging",
+            "Pogo Oscillation",
+            "Gravity Turn"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [7]
+    },
+    {
+        "text": "Which parameter describes the 'squashedness' of an elliptical orbit?",
+        "options": [
+            "Semi-major axis",
+            "Inclination",
+            "Eccentricity",
+            "Period"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [14]
+    },
+    {
+        "text": "Which law connects the pressure, volume, and temperature of a gas?",
+        "options": [
+            "Newton's Third Law",
+            "Ideal Gas Law",
+            "Tsiolkovsky Rocket Equation",
+            "First Law of Thermodynamics"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [1]
+    },
+    {
+        "text": "Why do vacuum-optimized nozzles have a much larger bell than sea-level nozzles?",
+        "options": [
+            "To increase weight",
+            "To allow the exhaust gases to expand to the near-zero ambient pressure of space",
+            "For better cooling",
+            "To handle higher thrust"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [6]
+    },
+    {
+        "text": "The 'stoichiometric' ratio is the ideal ratio of:",
+        "options": [
+            "Fuel to oxidizer for complete combustion",
+            "Engine thrust to rocket weight",
+            "Payload mass to total mass",
+            "Chamber pressure to exit pressure"
+        ],
+        "correct_answer_index": 0,
+        "topic_indices": [5]
+    },
+    {
+        "text": "An 'interstage' is the structure that connects what?",
+        "options": [
+            "The engine to the tank",
+            "Two stages of a multi-stage rocket",
+            "The payload to the final stage",
+            "The turbopump to the injector"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [12]
+    },
+    {
+        "text": "Which of these factors is NOT part of the basic thrust equation?",
+        "options": [
+            "Mass flow rate",
+            "Exhaust velocity",
+            "Exit pressure",
+            "Rocket's current altitude"
+        ],
+        "correct_answer_index": 3,
+        "topic_indices": [9]
+    },
+    {
+        "text": "In physics, what is momentum?",
+        "options": [
+            "Mass times acceleration",
+            "Mass times velocity",
+            "Force times distance",
+            "Energy per unit time"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [0]
+    },
+    {
+        "text": "What is the primary purpose of thermal insulation on a cryogenic tank?",
+        "options": [
+            "To provide structural support",
+            "To prevent the propellant from boiling off",
+            "To keep the propellant warm",
+            "To reduce aerodynamic drag"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [3, 8]
+    },
+    {
+        "text": "A 'burnout' in rocketry refers to:",
+        "options": [
+            "The rocket exploding on the launch pad",
+            "The point when a stage has exhausted its propellant",
+            "The moment of maximum aerodynamic pressure",
+            "The engine overheating"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [13]
+    },
+    {
+        "text": "Which of these is a key component for igniting propellants in a combustion chamber?",
+        "options": [
+            "A radiator",
+            "An igniter",
+            "A capacitor",
+            "A gyroscope"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [7]
+    },
+    {
+        "text": "If a satellite in a circular orbit fires its thruster retrograde (against its direction of motion), what will its new orbit be?",
+        "options": [
+            "A higher circular orbit",
+            "An elliptical orbit with a lower perigee",
+            "The same orbit, but faster",
+            "It will immediately de-orbit"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [14, 9]
+    },
+    {
+        "text": "What does a 'hybrid' rocket use for propellant?",
+        "options": [
+            "Two different liquid propellants",
+            "A mix of solid and liquid propellants",
+            "A single liquid monopropellant",
+            "An air-breathing engine"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [8]
+    },
+    {
+        "text": "The principle that energy cannot be created or destroyed is which law?",
+        "options": [
+            "First Law of Thermodynamics",
+            "Second Law of Thermodynamics",
+            "Third Law of Thermodynamics",
+            "Zeroth Law of Thermodynamics"
+        ],
+        "correct_answer_index": 0,
+        "topic_indices": [2]
+    },
+    {
+        "text": "The term 'ullage motors' refers to small rockets used to:",
+        "options": [
+            "Steer the rocket",
+            "Separate the stages",
+            "Settle propellant in the tanks before engine ignition in zero-g",
+            "Provide final orbital insertion"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [5, 12]
+    },
+    {
+        "text": "In the Tsiolkovsky Rocket Equation, 'ln' refers to what mathematical function?",
+        "options": [
+            "Logarithm base 10",
+            "Linear interpolation",
+            "Natural logarithm",
+            "A sine function"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [13]
+    },
+    {
+        "text": "What is the primary advantage of an 'aerospike' engine nozzle?",
+        "options": [
+            "It is very easy to cool",
+            "It is extremely lightweight",
+            "It automatically compensates for altitude, making it efficient at sea level and in a vacuum",
+            "It uses solid propellants"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [6]
+    },
+    {
+        "text": "A 'Lagrange Point' is a position in space where:",
+        "options": [
+            "Gravity is zero",
+            "The gravitational pull of two large bodies equals the centripetal force needed for a small object to move with them",
+            "A spacecraft runs out of fuel",
+            "Time dilation is at its maximum"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [14]
+    },
+    {
+        "text": "Which of these would experience the most atmospheric drag, assuming they are all traveling at the same high speed?",
+        "options": [
+            "A sphere",
+            "A sharp cone",
+            "A flat plate (face forward)",
+            "A streamlined teardrop shape"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [10]
+    },
+    {
+        "text": "Which of these is NOT a primary component of a liquid rocket engine?",
+        "options": [
+            "Turbopump",
+            "Combustion Chamber",
+            "Nozzle",
+            "Aileron"
+        ],
+        "correct_answer_index": 3,
+        "topic_indices": [7, 6, 8]
+    },
+    {
+        "text": "The concept of 'entropy' is a measure of:",
+        "options": [
+            "Energy",
+            "Disorder or randomness",
+            "Temperature",
+            "Pressure"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [2]
+    },
+    {
+        "text": "An 'oxidizer-rich' mixture means there is more oxidizer than is needed for a stoichiometric reaction. This is often done to:",
+        "options": [
+            "Save fuel",
+            "Increase thrust",
+            "Lower combustion temperatures and improve turbine life",
+            "Make the exhaust prettier"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [5, 7]
+    },
+    {
+        "text": "Which of these is a form of Newton's Third Law?",
+        "options": [
+            "F=ma",
+            "For every action, there is an equal and opposite reaction",
+            "An object in motion stays in motion",
+            "PV=nRT"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [4]
+    },
+    {
+        "text": "The process of using atmospheric drag to slow a spacecraft is called:",
+        "options": [
+            "Lithobraking",
+            "Aerobraking",
+            "Retrograde burn",
+            "Gravity assist"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [10, 14]
+    },
+    {
+        "text": "The law of conservation of momentum is a direct consequence of which of Newton's Laws?",
+        "options": [
+            "First and Second",
+            "Second and Third",
+            "First and Third",
+            "None of them"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [0, 4]
+    },
+    {
+        "text": "A 'film cooling' technique in a rocket engine involves:",
+        "options": [
+            "Wrapping the engine in an insulating film",
+            "Injecting a layer of cooler fluid along the inner chamber wall",
+            "Using a solid film that melts away",
+            "Painting the engine a reflective color"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [3, 7]
+    },
+    {
+        "text": "The flow separation inside a nozzle, which can cause instability, occurs primarily in what condition?",
+        "options": [
+            "Perfectly expanded",
+            "Under-expanded",
+            "Over-expanded",
+            "In a vacuum"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [6]
+    },
+    {
+        "text": "The time it takes for a satellite to complete one full orbit is called its:",
+        "options": [
+            "Period",
+            "Eccentricity",
+            "Inclination",
+            "Delta-v"
+        ],
+        "correct_answer_index": 0,
+        "topic_indices": [14]
+    },
+    {
+        "text": "What is the primary function of the 'grain' in a solid rocket motor?",
+        "options": [
+            "It is the structural casing",
+            "It is the propellant",
+            "It is the nozzle",
+            "It is the igniter"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [8]
+    },
+    {
+        "text": "According to the ideal gas law, at constant pressure, the volume of a gas is directly proportional to its:",
+        "options": [
+            "Mass",
+            "Density",
+            "Absolute temperature",
+            "Number of moles"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [1]
+    },
+    {
+        "text": "Which stage of a multi-stage rocket typically has an engine optimized for a vacuum?",
+        "options": [
+            "The first stage",
+            "The booster rockets",
+            "The upper stage(s)",
+            "All stages are the same"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [12, 6]
+    },
+    {
+        "text": "What is the main purpose of a 'gimbaled' engine nozzle?",
+        "options": [
+            "To cool the engine",
+            "To steer the rocket by changing the direction of the thrust",
+            "To increase the specific impulse",
+            "To mix the propellants"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [9, 6]
+    },
+    {
+        "text": "The 'tyranny of the rocket equation' refers to the fact that:",
+        "options": [
+            "Rockets are very loud",
+            "Achieving a small increase in final velocity requires a very large increase in propellant mass",
+            "The equation is difficult to solve",
+            "Rockets are inefficient"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [13]
+    },
+    {
+        "text": "What is the most significant source of heat that a rocket engine nozzle must withstand?",
+        "options": [
+            "Air friction",
+            "The hot exhaust gases from the combustion chamber",
+            "Solar radiation",
+            "Kinetic heating from the turbopump"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [3, 7]
+    },
+    {
+        "text": "If a rocket engine's mass flow rate is 100 kg/s and its exhaust velocity is 3000 m/s, what is its momentum thrust?",
+        "options": [
+            "30,000 N",
+            "300,000 N",
+            "3,000,000 N",
+            "30 N"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [9]
+    },
+    {
+        "text": "The process of a spacecraft firing its engine to slow down and enter orbit around a planet is called:",
+        "options": [
+            "Gravity assist",
+            "Aerobraking",
+            "Orbital insertion",
+            "Launch"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [14, 9]
+    },
+    {
+        "text": "Ammonium perchlorate composite propellant (APCP) is a common type of:",
+        "options": [
+            "Liquid propellant",
+            "Solid propellant",
+            "Hypergolic propellant",
+            "Monopropellant"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [8, 5]
+    },
+    {
+        "text": "The transfer of heat by the movement of fluids (liquids or gases) is called:",
+        "options": [
+            "Conduction",
+            "Convection",
+            "Radiation",
+            "Insulation"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [3]
+    },
+    {
+        "text": "What is the primary difference between momentum and kinetic energy?",
+        "options": [
+            "Momentum is a vector, kinetic energy is a scalar",
+            "They are the same thing",
+            "Momentum depends on acceleration, kinetic energy on velocity",
+            "Only massive objects have kinetic energy"
+        ],
+        "correct_answer_index": 0,
+        "topic_indices": [0]
+    },
+    {
+        "text": "What does a 'cryogenic' propellant require?",
+        "options": [
+            "A catalyst to react",
+            "Storage at extremely low temperatures",
+            "A solid binder",
+            "Spontaneous ignition on contact"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [8]
+    },
+    {
+        "text": "The pressure inside the combustion chamber of a large liquid rocket engine is typically:",
+        "options": [
+            "Lower than atmospheric pressure",
+            "Equal to atmospheric pressure",
+            "Many times higher than atmospheric pressure",
+            "Zero"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [7]
+    },
+    {
+        "text": "Which of these factors does NOT directly affect the Isp of an engine?",
+        "options": [
+            "Combustion temperature",
+            "Molecular weight of exhaust products",
+            "Nozzle expansion ratio",
+            "The total mass of the rocket"
+        ],
+        "correct_answer_index": 3,
+        "topic_indices": [11]
+    },
+    {
+        "text": "In a parallel staging design, the boosters and the core stage:",
+        "options": [
+            "Ignite one after the other",
+            "Are stacked on top of each other",
+            "Ignite at the same time and are discarded when empty",
+            "Are not discarded"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [12]
+    },
+    {
+        "text": "Kepler's First Law of planetary motion states that the orbit of a planet is a(n):",
+        "options": [
+            "Circle with the Sun at the center",
+            "Ellipse with the Sun at one focus",
+            "Parabola",
+            "Hyperbola"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [14]
+    },
+    {
+        "text": "What is the primary role of Newton's Second Law (F=ma) in rocketry?",
+        "options": [
+            "It explains the action-reaction force of the engine",
+            "It relates the net force on the rocket (thrust minus drag/gravity) to its acceleration",
+            "It conserves the total momentum of the system",
+            "It defines the gas pressure in the chamber"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [4, 9]
+    },
+    {
+        "text": "The 'characteristic velocity' (C-star) of a propellant combination is a measure of:",
+        "options": [
+            "The nozzle's performance",
+            "The combustion performance inside the chamber",
+            "The rocket's maximum speed",
+            "The propellant's density"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [5, 11]
+    },
+    {
+        "text": "The transfer of heat through direct molecular collision is called:",
+        "options": [
+            "Conduction",
+            "Convection",
+            "Radiation",
+            "Advection"
+        ],
+        "correct_answer_index": 0,
+        "topic_indices": [3]
+    },
+    {
+        "text": "The 'center of pressure' is a key concept in:",
+        "options": [
+            "Orbital mechanics",
+            "Combustion chemistry",
+            "Aerodynamic stability",
+            "Heat transfer"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [10]
+    },
+    {
+        "text": "For a rocket to be aerodynamically stable, where must its center of gravity be in relation to its center of pressure?",
+        "options": [
+            "Behind the center of pressure",
+            "At the same location as the center of pressure",
+            "In front of the center of pressure",
+            "It does not matter"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [10]
+    },
+    {
+        "text": "What is the primary purpose of adding aluminum powder to solid rocket propellant?",
+        "options": [
+            "To act as a binder",
+            "To increase the combustion temperature and energy release",
+            "To slow down the burn rate",
+            "To make the exhaust white"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [5, 8]
+    },
+    {
+        "text": "The term 'specific' in 'Specific Impulse' implies that the value is normalized by:",
+        "options": [
+            "Time",
+            "Mass",
+            "Weight",
+            "Volume"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [11]
+    },
+    {
+        "text": "The final stage of a rocket, after all propellant is burned, is mostly composed of engines, tanks, and structure. This is often called the:",
+        "options": [
+            "Payload mass",
+            "Wet mass",
+            "Dry mass",
+            "Propellant mass"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [13, 12]
+    },
+    {
+        "text": "Which of these is a significant source of inefficiency in a real rocket engine, not accounted for in ideal thermodynamic calculations?",
+        "options": [
+            "Heat loss through the chamber and nozzle walls",
+            "The rocket gaining altitude",
+            "The propellant being consumed",
+            "The vacuum of space"
+        ],
+        "correct_answer_index": 0,
+        "topic_indices": [2, 3]
+    },
+    {
+        "text": "The speed of light in a vacuum is the ultimate speed limit in the universe. This concept comes from which theory?",
+        "options": [
+            "Newtonian Mechanics",
+            "Quantum Mechanics",
+            "General Relativity",
+            "Special Relativity"
+        ],
+        "correct_answer_index": 3,
+        "topic_indices": [0, 4]
+    },
+    {
+        "text": "What does a 'turbofan' engine, common on commercial airliners, use that a rocket engine does not?",
+        "options": [
+            "A combustion chamber",
+            "A nozzle",
+            "Atmospheric air as the oxidizer and primary reaction mass",
+            "Fuel"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [5, 9]
+    },
+    {
+        "text": "Kepler's Second Law implies that a satellite moves fastest when it is at:",
+        "options": [
+            "Apogee (farthest point)",
+            "Perigee (closest point)",
+            "An orbital node",
+            "The speed is constant"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [14]
+    },
+    {
+        "text": "A 'sounding rocket' is designed primarily to:",
+        "options": [
+            "Achieve orbit",
+            "Travel to other planets",
+            "Carry scientific instruments on a suborbital flight",
+            "Test new types of fuel"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [14]
+    },
+    {
+        "text": "The 'shock diamonds' visible in a rocket exhaust plume are a result of:",
+        "options": [
+            "Incomplete combustion",
+            "The engine running perfectly",
+            "A mismatch between the exhaust pressure and ambient pressure, causing standing shock waves",
+            "Solid particles in the exhaust"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [6, 10]
+    },
+    {
+        "text": "The measure of the total energy in a thermodynamic system is called:",
+        "options": [
+            "Entropy",
+            "Enthalpy",
+            "Temperature",
+            "Pressure"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [2]
+    },
+    {
+        "text": "What is the primary function of fins on a smaller rocket or model rocket?",
+        "options": [
+            "To generate thrust",
+            "To provide aerodynamic stability",
+            "To store fuel",
+            "For decoration"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [10]
+    },
+    {
+        "text": "What is the primary component of RP-1 rocket fuel?",
+        "options": [
+            "Hydrogen",
+            "Methane",
+            "A highly refined form of kerosene",
+            "Alcohol"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [8]
+    },
+    {
+        "text": "An 'ion thruster' is a type of electric propulsion that generates thrust by:",
+        "options": [
+            "Burning propellant",
+            "Accelerating ions using electric or magnetic fields",
+            "Using nuclear fission",
+            "Pushing against solar wind"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [9, 11]
+    },
+    {
+        "text": "Compared to chemical rockets, ion thrusters have:",
+        "options": [
+            "Much higher thrust but lower Isp",
+            "Much lower thrust but much higher Isp",
+            "Similar thrust and Isp",
+            "No thrust at all"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [11, 9]
+    },
+    {
+        "text": "What is the term for the empty mass of a rocket stage after it has burned all its fuel?",
+        "options": [
+            "Wet mass",
+            "Gross mass",
+            "Dry mass",
+            "Payload mass"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [12, 13]
+    },
+    {
+        "text": "The 'escape velocity' from a planet depends on its mass and what other factor?",
+        "options": [
+            "Its radius",
+            "Its temperature",
+            "Its rotational speed",
+            "Its atmosphere"
+        ],
+        "correct_answer_index": 0,
+        "topic_indices": [14]
+    },
+    {
+        "text": "The 'impulse-to-weight ratio' of an engine is a measure of its:",
+        "options": [
+            "Fuel efficiency",
+            "Thrust relative to its own weight",
+            "Overall size",
+            "Burn time"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [9, 11]
+    },
+    {
+        "text": "If you increase the mass flow rate of a rocket engine while keeping exhaust velocity constant, what happens to the thrust?",
+        "options": [
+            "It decreases",
+            "It stays the same",
+            "It increases",
+            "It becomes unpredictable"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [9]
+    },
+    {
+        "text": "Which of these is a common oxidizer used in solid rocket motors?",
+        "options": [
+            "Aluminum powder",
+            "Ammonium perchlorate",
+            "Kerosene",
+            "Liquid hydrogen"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [5, 8]
+    },
+    {
+        "text": "The study of the flow of gases, especially at high speeds, is called:",
+        "options": [
+            "Thermodynamics",
+            "Aerodynamics",
+            "Orbital mechanics",
+            "Chemistry"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [10, 6]
+    },
+    {
+        "text": "For a Hohmann transfer orbit, how many engine burns are required?",
+        "options": [
+            "One",
+            "Two",
+            "Three",
+            "Four"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [14]
+    },
+    {
+        "text": "What does a propellant's 'density impulse' measure?",
+        "options": [
+            "How fast it burns",
+            "How much impulse is delivered per unit volume of propellant",
+            "How hot the exhaust is",
+            "How much it costs"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [11, 8]
+    },
+    {
+        "text": "A 'Single Stage to Orbit' (SSTO) vehicle is a design that:",
+        "options": [
+            "Uses only solid fuel",
+            "Reaches orbit without jettisoning any stages",
+            "Has only one engine",
+            "Is unmanned"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [12]
+    },
+    {
+        "text": "The law of conservation of energy is also known as:",
+        "options": [
+            "The First Law of Thermodynamics",
+            "The Second Law of Thermodynamics",
+            "The Third Law of Thermodynamics",
+            "Newton's Second Law"
+        ],
+        "correct_answer_index": 0,
+        "topic_indices": [2]
+    },
+    {
+        "text": "What is the primary function of a 'heat shield' on a re-entry vehicle?",
+        "options": [
+            "To provide lift",
+            "To protect the vehicle from the intense heat of atmospheric re-entry",
+            "To steer the vehicle",
+            "To communicate with ground stations"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [3, 10]
+    },
+    {
+        "text": "If a rocket is launched from the equator in the direction of Earth's rotation, it gets a 'free' velocity boost. This is because of:",
+        "options": [
+            "The Ideal Gas Law",
+            "The conservation of momentum",
+            "The Coriolis effect",
+            "The conservation of angular momentum"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [0, 14]
+    },
+    {
+        "text": "The pressure term in the thrust equation is significant when?",
+        "options": [
+            "The nozzle exit pressure is different from the ambient pressure",
+            "The rocket is in a perfect vacuum",
+            "The rocket is moving very slowly",
+            "The fuel is very cold"
+        ],
+        "correct_answer_index": 0,
+        "topic_indices": [9, 6]
+    },
+    {
+        "text": "The 'frozen flow' assumption in nozzle theory implies that:",
+        "options": [
+            "The exhaust gas is solid",
+            "The chemical composition of the exhaust gas does not change as it expands",
+            "The nozzle is cryogenically cooled",
+            "The flow has stopped"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [6, 2]
+    },
+    {
+        "text": "Which of these propellants would be considered hypergolic with Nitrogen Tetroxide (NTO)?",
+        "options": [
+            "Kerosene (RP-1)",
+            "Monomethylhydrazine (MMH)",
+            "Liquid Hydrogen (LH2)",
+            "Methane"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [5, 8]
+    },
+    {
+        "text": "What is the primary role of an igniter in a combustion chamber?",
+        "options": [
+            "To provide the initial energy to start the combustion reaction",
+            "To cool the chamber",
+            "To meter the propellant flow",
+            "To provide structural support"
+        ],
+        "correct_answer_index": 0,
+        "topic_indices": [7]
+    },
+    {
+        "text": "The point in an orbit closest to the Earth is called:",
+        "options": [
+            "Apogee",
+            "Perigee",
+            "Aphelion",
+            "Perihelion"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [14]
+    },
+    {
+        "text": "In a solid rocket motor, what determines the burn time?",
+        "options": [
+            "The length of the nozzle",
+            "The thickness of the propellant web",
+            "The diameter of the motor casing",
+            "The type of igniter used"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [8, 9]
+    },
+    {
+        "text": "The Tsiolkovsky Rocket Equation demonstrates that delta-v is directly proportional to:",
+        "options": [
+            "The rocket's initial mass",
+            "The burn time",
+            "The exhaust velocity",
+            "The final mass"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [13]
+    },
+    {
+        "text": "What does a rocket's 'thrust-to-weight ratio' need to be for liftoff from Earth?",
+        "options": [
+            "Exactly 0",
+            "Less than 1",
+            "Exactly 1",
+            "Greater than 1"
+        ],
+        "correct_answer_index": 3,
+        "topic_indices": [9, 4]
+    },
+    {
+        "text": "Which of these is a key assumption of the Ideal Gas Law?",
+        "options": [
+            "Gas particles have significant volume",
+            "There are strong intermolecular forces between gas particles",
+            "Collisions between gas particles are perfectly elastic",
+            "The gas is at a very low temperature"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [1]
+    },
+    {
+        "text": "A 'Newton' is a unit of force, defined as the force required to accelerate a 1 kg mass at what rate?",
+        "options": [
+            "1 m/s^2",
+            "9.8 m/s^2",
+            "1 cm/s^2",
+            "1 km/s^2"
+        ],
+        "correct_answer_index": 0,
+        "topic_indices": [4]
+    },
+    {
+        "text": "In thermodynamics, 'heat' is defined as:",
+        "options": [
+            "The same thing as temperature",
+            "Energy transferred due to a temperature difference",
+            "The total kinetic energy of molecules",
+            "A property of a system"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [2, 3]
+    },
+    {
+        "text": "What is the primary challenge associated with 'rocket staging'?",
+        "options": [
+            "The complexity and potential failure points of the separation mechanism",
+            "The cost of the extra engines",
+            "The rocket becoming too tall",
+            "The increased aerodynamic drag"
+        ],
+        "correct_answer_index": 0,
+        "topic_indices": [12]
+    },
+    {
+        "text": "An engine is said to be 'throttled' when:",
+        "options": [
+            "It is shut down",
+            "Its thrust level is intentionally varied during operation",
+            "It is running at maximum power",
+            "It is separated from the stage"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [9, 7]
+    },
+    {
+        "text": "The area where the nozzle's cross-sectional area increases is called the:",
+        "options": [
+            "Convergent section",
+            "Throat",
+            "Divergent section",
+            "Combustor"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [6]
+    },
+    {
+        "text": "What is a 'sounding rocket' flight path an example of?",
+        "options": [
+            "An orbital flight",
+            "A suborbital flight",
+            "An interstellar flight",
+            "A geostationary flight"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [14]
+    },
+    {
+        "text": "The 'coefficient of drag' for a rocket depends primarily on its:",
+        "options": [
+            "Mass",
+            "Color",
+            "Shape and speed",
+            "Fuel type"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [10]
+    },
+    {
+        "text": "The study of how heat is converted to and from other forms of energy is called:",
+        "options": [
+            "Thermodynamics",
+            "Kinetics",
+            "Aerodynamics",
+            "Orbital Mechanics"
+        ],
+        "correct_answer_index": 0,
+        "topic_indices": [2]
+    },
+    {
+        "text": "A 'monopropellant' is a substance that:",
+        "options": [
+            "Is solid at room temperature",
+            "Requires a separate fuel and oxidizer",
+            "Can decompose to produce hot gas without an oxidizer",
+            "Is not a chemical propellant"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [5, 8]
+    },
+    {
+        "text": "Which of these is NOT considered a fundamental force of nature?",
+        "options": [
+            "Gravity",
+            "Electromagnetism",
+            "The Strong Nuclear Force",
+            "Momentum"
+        ],
+        "correct_answer_index": 3,
+        "topic_indices": [0]
+    },
+    {
+        "text": "The 'specific heat capacity' of a substance is the amount of heat needed to:",
+        "options": [
+            "Melt the substance",
+            "Raise the temperature of a unit mass by one degree",
+            "Boil the substance",
+            "Increase its pressure"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [3, 2]
+    },
+    {
+        "text": "What is the primary function of a launch escape system?",
+        "options": [
+            "To provide extra thrust during launch",
+            "To pull the crew capsule away from a failing rocket",
+            "To steer the rocket",
+            "To deploy the payload"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [12, 9]
+    },
+    {
+        "text": "An orbit that has an eccentricity of exactly 0 is a perfect:",
+        "options": [
+            "Ellipse",
+            "Circle",
+            "Parabola",
+            "Hyperbola"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [14]
+    },
+    {
+        "text": "What is the primary disadvantage of solid rocket motors?",
+        "options": [
+            "They have low reliability",
+            "They are difficult to store",
+            "They cannot typically be shut down or throttled once ignited",
+            "They have low thrust"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [8]
+    },
+    {
+        "text": "In the Tsiolkovsky Rocket Equation, a higher exhaust velocity leads to:",
+        "options": [
+            "A lower delta-v for the same mass ratio",
+            "A higher delta-v for the same mass ratio",
+            "No change in delta-v",
+            "A lower specific impulse"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [13, 11]
+    },
+    {
+        "text": "What does a 'pyrotechnic' device do in a rocket?",
+        "options": [
+            "It is a type of sensor",
+            "It uses a small explosive charge to perform a mechanical action, like stage separation",
+            "It is the main engine",
+            "It is part of the communication system"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [12]
+    },
+    {
+        "text": "The study of chemical reactions and their rates is known as:",
+        "options": [
+            "Chemical kinetics",
+            "Thermodynamics",
+            "Fluid dynamics",
+            "Organic chemistry"
+        ],
+        "correct_answer_index": 0,
+        "topic_indices": [5, 7]
+    },
+    {
+        "text": "Which of these is NOT a primary source of heat for a re-entering spacecraft?",
+        "options": [
+            "Friction with air molecules",
+            "Compression of the air in front of the vehicle",
+            "The spacecraft's own engines firing retrograde",
+            "Both friction and compression are sources"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [3, 10]
+    },
+    {
+        "text": "The momentum of an object is a _______ quantity, meaning it has both magnitude and direction.",
+        "options": [
+            "Scalar",
+            "Vector",
+            "Constant",
+            "Thermal"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [0]
+    },
+    {
+        "text": "Why is the pressure inside a combustion chamber kept as high as practically possible?",
+        "options": [
+            "To increase engine efficiency and thrust",
+            "To make the engine lighter",
+            "To reduce the exhaust temperature",
+            "To make the engine easier to cool"
+        ],
+        "correct_answer_index": 0,
+        "topic_indices": [7, 9]
+    },
+    {
+        "text": "A 'star' shaped grain in a solid rocket motor provides a thrust profile that is:",
+        "options": [
+            "Regressive (decreases over time)",
+            "Progressive (increases over time)",
+            "Neutral (stays relatively constant)",
+            "Unpredictable"
+        ],
+        "correct_answer_index": 2,
+        "topic_indices": [8, 9]
+    },
+    {
+        "text": "What does a nozzle's 'expansion ratio' refer to?",
+        "options": [
+            "The ratio of the exit area to the throat area",
+            "The ratio of chamber pressure to exit pressure",
+            "The ratio of length to diameter",
+            "The ratio of fuel to oxidizer"
+        ],
+        "correct_answer_index": 0,
+        "topic_indices": [6]
+    },
+    {
+        "text": "An 'orbital plane' is:",
+        "options": [
+            "A type of spacecraft",
+            "The two-dimensional flat surface that contains an orbit",
+            "A specific type of maneuver",
+            "The highest point in an orbit"
+        ],
+        "correct_answer_index": 1,
+        "topic_indices": [14]
+    }
+]
+

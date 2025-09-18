@@ -1,0 +1,6 @@
+torch
+numpy
+networkx
+matplotlib
+transformers
+accelerate
